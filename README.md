@@ -93,3 +93,6 @@ console.log(str2.capitalize());
 ```
 
 ## [Reference](/dist/index.d.ts)
+### [String](/dist/String.d.ts)
+### [Object](/dist/Object.d.ts)
+### [Array](/dist/Array.d.ts)
