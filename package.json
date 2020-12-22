@@ -1,0 +1,23 @@
+{
+	"name": "missing-native-js-functions",
+	"version": "1.0.0",
+	"description": "mnJSf that should be the base library for every JS project",
+	"main": "dist/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Flam3rboy/missing-native-JS-functions.git"
+	},
+	"keywords": [],
+	"author": "Flam3rboy",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Flam3rboy/missing-native-JS-functions/issues"
+	},
+	"homepage": "https://github.com/Flam3rboy/missing-native-JS-functions#readme",
+	"devDependencies": {
+		"@types/node": "^14.14.14"
+	}
+}
