@@ -1,6 +1,8 @@
 # missing-native-JS-functions
 mnJSf that should be the base lib for every JS project
 
+This library extends the property of ``Array``, ``Object`` and ``Array``
+
 ## Installation
 
 ```
@@ -20,6 +22,41 @@ or ES6 import
 
 ```js
 import "missing-native-js-functions";
+```
+
+## [Reference](/dist/index.d.ts)
+### [Array](/dist/Array.d.ts)
+```ts
+Array {
+	remove(value: T): this; // removes the value of the array (Notice: it modifies the current array)
+	flat(depth?: number): T; // returns a new flattened array e.g. [[1,2],[3,4]] -> [1,2,3,4]
+	first(): T; // returns the first element of the array
+	last(): T; // returns the last element of the array
+	findMap(predicate: (value: T, index: number, obj: T[]) => unknown, map: (value: T) => any): any | undefined; // finds a value in the array and maps it 
+	random(): T; // returns a random array element
+	unique(): T[]; // returns a new unique array with distinct values
+	shuffle(): T[]; // shuffles the current array
+	insert(elem: T, index: number): T[]; // insert an element at a specified index
+}
+```
+
+### [Object](/dist/Object.d.ts)
+```ts
+Object {
+	forEach(callback: (element: any, index?: string) => any): void; // callback is called for every element in object
+	map(callback: (element: any, index?: string) => any): this; // callback is called for every element in object and the result is returned as a new object 
+	static equals(x: any, y: any): boolean; 
+	equals(other: any): boolean; // checks if this Objects is the same with the other, WARNING this won't work with circular objects
+}
+```
+
+### [String](/dist/String.d.ts)
+```ts
+String {
+	capitalize(): string; // returns a new string with the first character capitalized
+	replaceAll(search: string, replace: string): string; // replace all occurrences of search with replace
+	similarity(compare: string): number; // Returns a value between 0 (different) and 1 (same) indicating how similar the string is to compare
+}
 ```
 
 
@@ -91,8 +128,3 @@ console.log({ str1, str2 });
 console.log(str2.capitalize());
 // -> Test-hello-1234
 ```
-
-## [Reference](/dist/index.d.ts)
-### [String](/dist/String.d.ts)
-### [Object](/dist/Object.d.ts)
-### [Array](/dist/Array.d.ts)
