@@ -1,4 +1,4 @@
-Object.defineProperties(Object, {
+Object.defineProperties(Object.prototype, {
 	forEach: {
 		enumerable: false,
 		value: function (callback: (element: any, index?: string) => any) {

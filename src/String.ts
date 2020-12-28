@@ -1,4 +1,4 @@
-Object.defineProperties(String, {
+Object.defineProperties(String.prototype, {
 	capitalize: {
 		enumerable: false,
 		value: function () {

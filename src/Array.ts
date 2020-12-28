@@ -1,4 +1,4 @@
-Object.defineProperties(Array, {
+Object.defineProperties(Array.prototype, {
 	remove: {
 		enumerable: false,
 		value: function <T>(this: T[], elem: T): T[] {
