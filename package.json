@@ -10,7 +10,15 @@
 		"type": "git",
 		"url": "git+https://github.com/Flam3rboy/missing-native-JS-functions.git"
 	},
-	"keywords": [],
+	"keywords": [
+		"js",
+		"js-utils",
+		"js-extension",
+		"ecma",
+		"ecma-utils",
+		"ecma-extension",
+		"mnJSf"
+	],
 	"author": "Flam3rboy",
 	"license": "ISC",
 	"bugs": {
