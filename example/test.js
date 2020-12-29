@@ -18,14 +18,6 @@ console.log(obj.equals(compareObj));
 
 obj.forEach(console.log);
 
-const str1 = "test,hello,1234";
-const str2 = str1.replaceAll(",", "-");
-
-console.log({ str1, str2 });
-// -> {str1: 'test,hello,1234', str2: 'test-hello-1234'}
-
-console.log(str2.capitalize());
-
 const arr = [
 	[0, 1],
 	[2, 3],
@@ -46,3 +38,11 @@ const last = arr.last();
 arr.insert(8);
 
 console.log(arr, first, last);
+
+const str1 = "test,hello,1234";
+const str2 = str1.replaceAll(",", "-");
+
+console.log({ str1, str2 });
+// -> {str1: 'test,hello,1234', str2: 'test-hello-1234'}
+
+console.log(str2.capitalize());

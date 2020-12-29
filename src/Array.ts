@@ -1,6 +1,8 @@
 Object.defineProperties(Array.prototype, {
 	remove: {
 		enumerable: false,
+		writable: true,
+		configurable: true,
 		value: function <T>(this: T[], elem: T): T[] {
 			// do not use filter to modify current array
 			const index = this.indexOf(elem);
@@ -12,6 +14,8 @@ Object.defineProperties(Array.prototype, {
 	},
 	insert: {
 		enumerable: false,
+		writable: true,
+		configurable: true,
 		value: function <T>(elem: T, index: number) {
 			if (!index) index = this.length;
 			return this.splice(index, 0, elem);
@@ -19,6 +23,8 @@ Object.defineProperties(Array.prototype, {
 	},
 	flat: {
 		enumerable: false,
+		writable: true,
+		configurable: true,
 		value: function (depth: number = 1) {
 			return this.reduce(
 				(acc: any, val: any) =>
@@ -31,18 +37,24 @@ Object.defineProperties(Array.prototype, {
 	},
 	last: {
 		enumerable: false,
+		writable: true,
+		configurable: true,
 		value: function () {
 			return this[this.length - 1];
 		},
 	},
 	first: {
 		enumerable: false,
+		writable: true,
+		configurable: true,
 		value: function () {
 			return this[0];
 		},
 	},
 	unique: {
 		enumerable: false,
+		writable: true,
+		configurable: true,
 		value: function () {
 			return [...new Set(this)];
 		},
@@ -55,6 +67,8 @@ Object.defineProperties(Array.prototype, {
 	},
 	shuffle: {
 		enumerable: false,
+		writable: true,
+		configurable: true,
 		value: function () {
 			for (let i = this.length - 1; i > 0; i--) {
 				const j = Math.floor(Math.random() * (i + 1));
@@ -65,6 +79,8 @@ Object.defineProperties(Array.prototype, {
 	},
 	findMap: {
 		enumerable: false,
+		writable: true,
+		configurable: true,
 		value: function <T>(
 			predicate: (value: T, index: number, obj: T[]) => unknown,
 			map: (value: T) => any

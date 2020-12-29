@@ -1,6 +1,8 @@
 Object.defineProperties(Object.prototype, {
 	forEach: {
 		enumerable: false,
+		configurable: true,
+		writable: true,
 		value: function (callback: (element: any, index?: string) => any) {
 			// @ts-ignore
 			return Object.keys(this).forEach((key) => callback(this[key], key));
@@ -8,6 +10,8 @@ Object.defineProperties(Object.prototype, {
 	},
 	map: {
 		enumerable: false,
+		configurable: true,
+		writable: true,
 		value: function (callback: (element: any, index?: string) => any) {
 			let obj = {};
 
@@ -20,6 +24,7 @@ Object.defineProperties(Object.prototype, {
 	},
 	equals: {
 		enumerable: false,
+		configurable: true,
 		writable: true,
 		value: function (other: any): boolean {
 			return JSON.stringify(this) === JSON.stringify(other);

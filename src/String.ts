@@ -1,18 +1,24 @@
 Object.defineProperties(String.prototype, {
 	capitalize: {
 		enumerable: false,
+		configurable: true,
+		writable: true,
 		value: function () {
 			return this.slice(0, 1).toUpperCase() + this.slice(1);
 		},
 	},
 	replaceAll: {
 		enumerable: false,
+		configurable: true,
+		writable: true,
 		value: function (find: string, replace: string) {
 			return this.replace(new RegExp(escapeRegExp(find), "g"), replace);
 		},
 	},
 	similarity: {
 		enumerable: false,
+		configurable: true,
+		writable: true,
 		value: function (second: string) {
 			let first = this.replace(/\s+/g, "");
 			second = second.replace(/\s+/g, "");
