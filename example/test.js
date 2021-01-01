@@ -46,3 +46,4 @@ console.log({ str1, str2 });
 // -> {str1: 'test,hello,1234', str2: 'test-hello-1234'}
 
 console.log(str2.capitalize());
+console.log("test".similarity("TEST"));
