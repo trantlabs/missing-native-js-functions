@@ -54,6 +54,14 @@ Object.defineProperties(String.prototype, {
 			return (2.0 * intersectionSize) / (first.length + second.length - 2);
 		},
 	},
+	join: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (iterate: string[]) {
+			return iterate.join(this);
+		},
+	},
 });
 
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js
