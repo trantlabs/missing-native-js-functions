@@ -54,6 +54,47 @@ Object.defineProperties(String.prototype, {
 			return (2.0 * intersectionSize) / (first.length + second.length - 2);
 		},
 	},
+	join: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (iterate: string[]) {
+			return iterate.join(this);
+		},
+	},
+	partiton: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (seperator: string) {
+			if (!this.includes(seperator)) {
+				return [this];
+			}
+			let returnArray: string[] = [];
+			let splitarray: string[] = this.split(seperator);
+			for (let i = 0; i < splitarray.length; i++) {
+				returnArray.push(splitarray[i]);
+				if (i != splitarray.length - 1) returnArray.push(seperator);
+			}
+			return returnArray;
+		},
+	},
+	toNumber: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return Number(this);
+		},
+	},
+	toBigInt: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return BigInt(this);
+		},
+	},
 });
 
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js
