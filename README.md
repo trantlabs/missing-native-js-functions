@@ -51,6 +51,9 @@ Object {
 	map(callback: (element: any, index?: string) => any): this; // callback is called for every element in object and the result is returned as a new object
 	static equals(x: any, y: any): boolean;
 	equals(other: any): boolean; // checks if this Objects is the same with the other, WARNING this won't work with circular objects
+	keys(): string[]; //returns keys of given Object
+	values(): any[]; // returns values of given Object
+	entries(): [string[],any[]] //returns a nested array of key and corresponding value
 }
 ```
 
@@ -123,6 +126,15 @@ console.log(obj.equals(compareObj));
 obj.forEach(console.log);
 // -> 2 test
 // -> 4 tester
+
+console.log(obj.keys());
+// -> ["test","tester"]
+
+console.log(obj.values());
+// -> [1,2]
+
+console.log(obj.entries());
+// -> [[test,1],[tester,2]]
 ```
 
 ### String
