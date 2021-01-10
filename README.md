@@ -63,6 +63,8 @@ String {
 	similarity(compare: string): number; // Returns a value between 0 (different) and 1 (same) indicating how similar the string is to compare
 	join(iterate: string[]): string; // Returns the array values seperated by the given divider as a string
 	partiton(): string[] // Returns split array, but includes seperators
+	toNumber(): number // converts string to number
+	toBigInt(): number // converts string to BigInt, if not a number returns NaN
 }
 ```
 
@@ -144,4 +146,9 @@ console.log(", ".join(words));
 const wordList = "test.hello.1234";
 console.log(wordList.partition());
 // -> ["test", ".", "hello", ".", "1234"]
+
+"25".toNumber();
+// -> 25: number
+"25".toBigInt();
+// -> 25n:
 ```

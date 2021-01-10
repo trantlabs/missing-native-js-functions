@@ -79,6 +79,22 @@ Object.defineProperties(String.prototype, {
 			return returnArray;
 		},
 	},
+	toNumber: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return Number(this);
+		},
+	},
+	toBigInt: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return BigInt(this);
+		},
+	},
 });
 
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js
