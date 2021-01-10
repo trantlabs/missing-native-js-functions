@@ -58,10 +58,11 @@ Object {
 
 ```ts
 String {
-	capitalize(): string; // returns a new string with the first character capitalized
-	replaceAll(search: string, replace: string): string; // replace all occurrences of search with replace
+	capitalize(): string; // Returns a new string with the first character capitalized
+	replaceAll(search: string, replace: string): string; // Replace all occurrences of search with replace
 	similarity(compare: string): number; // Returns a value between 0 (different) and 1 (same) indicating how similar the string is to compare
 	join(iterate: string[]): string; // Returns the array values seperated by the given divider as a string
+	partiton(): string[] // Returns split array, but includes seperators
 }
 ```
 
@@ -139,4 +140,8 @@ console.log(str2.capitalize());
 const words = ["test", "hello", "1234"];
 console.log(", ".join(words));
 // -> test, hello, 1234
+
+const wordList = "test.hello.1234";
+console.log(wordList.partition());
+// -> ["test", ".", "hello", ".", "1234"]
 ```

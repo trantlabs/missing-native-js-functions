@@ -62,6 +62,23 @@ Object.defineProperties(String.prototype, {
 			return iterate.join(this);
 		},
 	},
+	partiton: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (seperator: string) {
+			if (!this.includes(seperator)) {
+				return [this];
+			}
+			let returnArray: string[] = [];
+			let splitarray: string[] = this.split(seperator);
+			for (let i = 0; i < splitarray.length; i++) {
+				returnArray.push(splitarray[i]);
+				if (i != splitarray.length - 1) returnArray.push(seperator);
+			}
+			return returnArray;
+		},
+	},
 });
 
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js
