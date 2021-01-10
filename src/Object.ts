@@ -30,6 +30,30 @@ Object.defineProperties(Object.prototype, {
 			return JSON.stringify(this) === JSON.stringify(other);
 		},
 	},
+	keys: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (): any[] {
+			return Object.keys(this);
+		},
+	},
+	values: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (): any[] {
+			return Object.values(this);
+		},
+	},
+	entries: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (): any[] {
+			return Object.entries(this);
+		},
+	},
 });
 
 // @ts-ignore
@@ -42,6 +66,9 @@ declare global {
 		// @ts-ignore
 		static equals(x: any, y: any): boolean;
 		equals(other: any): boolean;
+		keys(): string[];
+		values(): any[];
+		entries(): Array<[string, any]>;
 	}
 }
 export {};
