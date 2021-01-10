@@ -51,9 +51,9 @@ Object {
 	map(callback: (element: any, index?: string) => any): this; // callback is called for every element in object and the result is returned as a new object
 	static equals(x: any, y: any): boolean;
 	equals(other: any): boolean; // checks if this Objects is the same with the other, WARNING this won't work with circular objects
-	keys(): string[]; //returns keys of given Object
-	values(): any[]; // returns values of given Object
-	entries():  Array<[string, any]> //returns a nested array of key and corresponding value
+	keys(): string[]; //returns keys of object itself
+	values(): any[]; // returns values of object itself
+	entries():  Array<[string, any]> // returns a nested array of key and corresponding value of object itself
 }
 ```
 
