@@ -68,7 +68,7 @@ declare global {
 		equals(other: any): boolean;
 		keys(): string[];
 		values(): any[];
-		entries(): [string[], any[]];
+		entries(): Array<[string, any]>;
 	}
 }
 export {};

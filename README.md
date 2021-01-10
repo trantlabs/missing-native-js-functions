@@ -53,7 +53,7 @@ Object {
 	equals(other: any): boolean; // checks if this Objects is the same with the other, WARNING this won't work with circular objects
 	keys(): string[]; //returns keys of given Object
 	values(): any[]; // returns values of given Object
-	entries(): [string[],any[]] //returns a nested array of key and corresponding value
+	entries():  Array<[string, any]> //returns a nested array of key and corresponding value
 }
 ```
 
