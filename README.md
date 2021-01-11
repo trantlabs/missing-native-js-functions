@@ -53,7 +53,7 @@ Object {
 	equals(other: any): boolean; // checks if this Objects is the same with the other, WARNING this won't work with circular objects
 	keys(): string[]; //returns keys of object itself
 	values(): any[]; // returns values of object itself
-	entries():  Array<[string, any]> // returns a nested array of key and corresponding value of object itself
+	entries():  Array<[string, any]>; // returns a nested array of key and corresponding value of object itself
 }
 ```
 
@@ -65,9 +65,9 @@ String {
 	replaceAll(search: string, replace: string): string; // Replace all occurrences of search with replace
 	similarity(compare: string): number; // Returns a value between 0 (different) and 1 (same) indicating how similar the string is to compare
 	join(iterate: string[]): string; // Returns the array values seperated by the given divider as a string
-	partiton(): string[] // Returns split array, but includes separators
-	toNumber(): number // converts string to number, if not a number returns NaN
-	toBigInt(): number // converts string to BigInt, if not a number returns NaN
+	partiton(): string[]; // Returns split array, but includes separators
+	toNumber(): number; // converts string to number, if not a number returns NaN
+	toBigInt(): number; // converts string to BigInt, if not a number returns NaN
 }
 ```
 
