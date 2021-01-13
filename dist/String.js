@@ -116,15 +116,8 @@ Object.defineProperties(String.prototype, {
 		enumerable: false,
 		configurable: true,
 		writable: true,
-		value: function (letter) {
-			var count = 0;
-			for (var position = 0; position < this.length; position++) {
-				if (this.charAt(position) == letter) {
-					count += 1;
-				}
-			}
-			return count;
-
+		value: function (countString) {
+			return this.split(countString).length - 1;
 		}
 	}
 });

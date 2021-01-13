@@ -54,7 +54,9 @@ console.log("test".similarity("TEST"));
 //EQUALS IGNORE CASE EXAMPLE
 const string3 = "STRING";
 console.log(string3.equalsIgnoreCase("string"));
+// -> true
 
 //COUNT STRING EXAMPLE
-const string4 = "This is my String";
-console.log(string4.count("i"))
+const string4 = "This is my House, my House is very cool!";
+console.log(string4.count("House"))
+// -> 2
