@@ -62,7 +62,7 @@ Object.defineProperties(String.prototype, {
 			return iterate.join(this);
 		},
 	},
-	partiton: {
+	partition: {
 		enumerable: false,
 		configurable: true,
 		writable: true,

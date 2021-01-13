@@ -3,8 +3,14 @@
 	"version": "1.0.10",
 	"description": "mnJSf that should be the base library for every JS project",
 	"main": "dist/index.js",
+	"browser": "dist/mnjsf.min.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "node example/",
+		"start": "npm run build && npm run test",
+		"build": "tsc -b .",
+		"rollup": "rollup -c",
+		"prepublishOnly": "npm run build && npm run rollup"
 	},
 	"repository": {
 		"type": "git",
@@ -26,6 +32,10 @@
 	},
 	"homepage": "https://github.com/Flam3rboy/missing-native-JS-functions#readme",
 	"devDependencies": {
-		"@types/node": "^14.14.14"
+		"@types/node": "^14.14.14",
+		"rollup": "^2.36.1",
+		"rollup-plugin-babel-minify": "^10.0.0",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-node-resolve": "^5.2.0"
 	}
 }
