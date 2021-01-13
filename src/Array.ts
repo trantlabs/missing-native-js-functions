@@ -96,25 +96,23 @@ Object.defineProperties(Array.prototype, {
 		writable: true,
 		configurable: true,
 		value: function (search: RegExp | any) {
-			const nativeTypes = [String, Number, Object, Array];
-			let i: number = 0;
+			const nativeTypes = ["string", "number", "object", "array"];
+			let count: number = 0;
 
 			this.forEach((element: any) => {
 				if (element === search) {
-					i++;
+					count++;
 					return;
 				}
 
 				// check if searchparam is a native class (l: 99)
 				if (typeof search == "function") {
-					if (
-						nativeTypes.includes(search) &&
-						typeof element === search.toString().split(" ")[1].slice(0, -2).toLowerCase()
-					) {
-						i++;
+					const className = search.name.toLowerCase();
+					if (nativeTypes.includes(className) && typeof element === className) {
+						count++;
 						return;
 					} else if (element instanceof search) {
-						i++;
+						count++;
 						return;
 					}
 				}
@@ -122,12 +120,12 @@ Object.defineProperties(Array.prototype, {
 				// if element of array is a string: allow regex patterns
 				if (typeof element === "string") {
 					if (element.match(search)) {
-						i++;
+						count++;
 						return;
 					}
 				}
 			});
-			return i;
+			return count;
 		},
 	},
 });
