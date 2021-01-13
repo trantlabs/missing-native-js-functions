@@ -111,6 +111,21 @@ Object.defineProperties(String.prototype, {
 		value: function (compareString) {
 			return this.toLowerCase() === compareString.toLowerCase();
 		}
+	},
+	count: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (letter) {
+			var count = 0;
+			for (var position = 0; position < this.length; position++) {
+				if (this.charAt(position) == letter) {
+					count += 1;
+				}
+			}
+			return count;
+
+		}
 	}
 });
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js

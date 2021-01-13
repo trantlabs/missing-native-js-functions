@@ -8,6 +8,7 @@ declare global {
         toNumber(): number;
 		toBigInt(): bigint;
 		equalsIgnoreCase(compareString: string): string;
+		count(letter: string): string;
     }
 }
 export {};
