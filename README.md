@@ -101,7 +101,11 @@ arr.insert(8);
 console.log(arr);
 // -> [4, 7, 5, 1, 6, 2, 3, 8]
 
-let array = ["test", "test", "test", "no", 2, 15, { 2: 14 }];
+class Test {
+	constructor() {}
+}
+
+let array = ["test", "test", "test", "no", 2, 15, { 2: 14 }, new Test(), new Test()];
 
 console.log(array.count(Number));
 // -> 2
@@ -109,6 +113,8 @@ console.log(array.count(String));
 // -> 4
 console.log(array.count(Object));
 // -> 1
+console.log(array.count(Test));
+// -> 2
 console.log(array.count(/[a-z]/));
 // -> 4
 console.log(array.count("test"));
