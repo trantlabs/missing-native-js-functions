@@ -57,6 +57,6 @@ console.log(string3.equalsIgnoreCase("string"));
 // -> true
 
 //COUNT STRING EXAMPLE
-const string4 = "This is my House, my House is very cool!";
+const string4 = "This is my House, my House is very cool! And this House is small!";
 console.log(string4.count("House"))
-// -> 2
+// -> 3
