@@ -40,6 +40,7 @@ Array {
 	unique(): T[]; // returns a new unique array with distinct values
 	shuffle(): T[]; // shuffles the current array
 	insert(elem: T, index: number): T[]; // insert an element at a specified index
+	count(search: RegExp | any): number; // returns total of found items for specified search
 }
 ```
 
@@ -99,6 +100,21 @@ arr.insert(8);
 
 console.log(arr);
 // -> [4, 7, 5, 1, 6, 2, 3, 8]
+
+let array = ["test", "test", "test", "no", 2, 15, { 2: 14 }];
+
+console.log(array.count(Number));
+// -> 2
+console.log(array.count(String));
+// -> 4
+console.log(array.count(Object));
+// -> 1
+console.log(array.count(/[a-z]/));
+// -> 4
+console.log(array.count("test"));
+// -> 3
+console.log(array.count(15));
+// -> 1
 ```
 
 ### Object

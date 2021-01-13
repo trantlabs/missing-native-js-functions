@@ -1,3 +1,5 @@
+import { type } from "os";
+
 Object.defineProperties(Array.prototype, {
 	remove: {
 		enumerable: false,
@@ -89,6 +91,33 @@ Object.defineProperties(Array.prototype, {
 			return found !== undefined ? map(found) : found;
 		},
 	},
+	count: {
+		enumerable: false,
+		writable: true,
+		configurable: true,
+		value: function (search: RegExp | any) {
+			let i: number = 0;
+			this.forEach((element: any) => {
+				if (element === search) {
+					i++;
+					return;
+				}
+				if (typeof search == "function") {
+					if (typeof element === search.toString().split(" ")[1].slice(0, -2).toLowerCase()) {
+						i++;
+						return;
+					}
+				}
+				if (typeof element === "string") {
+					if (element.match(search)) {
+						i++;
+						return;
+					}
+				}
+			});
+			return i;
+		},
+	},
 });
 
 declare global {
@@ -102,6 +131,7 @@ declare global {
 		unique(): T[];
 		shuffle(): T[];
 		insert(elem: T, index: number): T[];
+		count(search: RegExp | any): number;
 	}
 }
 
