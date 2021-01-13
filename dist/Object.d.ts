@@ -4,9 +4,9 @@ declare global {
         map(callback: (element: any, index?: string) => any): this;
         static equals(x: any, y: any): boolean;
         equals(other: any): boolean;
-        keys(): any[];
+        keys(): string[];
         values(): any[];
-        entries(): any[];
+        entries(): Array<[string, any]>;
     }
 }
 export {};
