@@ -95,6 +95,14 @@ Object.defineProperties(String.prototype, {
 			return BigInt(this);
 		},
 	},
+	equalsIgnoreCase: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function(compareString: String){
+			return this.toLowerCase() === compareString.toLowerCase();
+		}
+	}
 });
 
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js

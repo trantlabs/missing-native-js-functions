@@ -19,13 +19,13 @@ console.log(obj.equals(compareObj));
 obj.forEach(console.log);
 
 const arr = [
-	[0, 1],
-	[2, 3],
-	[2, 3],
-	[2, 3],
-	[4, 5],
-	[6, 7],
-]
+		[0, 1],
+		[2, 3],
+		[2, 3],
+		[2, 3],
+		[4, 5],
+		[6, 7],
+	]
 	.flat()
 	.unique()
 	.shuffle();
@@ -42,8 +42,15 @@ console.log(arr, first, last);
 const str1 = "test,hello,1234";
 const str2 = str1.replaceAll(",", "-");
 
-console.log({ str1, str2 });
+console.log({
+	str1,
+	str2
+});
 // -> {str1: 'test,hello,1234', str2: 'test-hello-1234'}
 
 console.log(str2.capitalize());
 console.log("test".similarity("TEST"));
+
+//EQUALS IGNORE CASE EXAMPLE
+const string3 = "STRING";
+console.log(string3.equalsIgnoreCase("string"));
