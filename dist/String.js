@@ -1,5 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", {
+	value: true,
+});
 Object.defineProperties(String.prototype, {
 	capitalize: {
 		enumerable: false,
@@ -98,6 +100,22 @@ Object.defineProperties(String.prototype, {
 			} catch (error) {
 				return NaN;
 			}
+		},
+	},
+	equalsIgnoreCase: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (compareString) {
+			return this.toLowerCase() === compareString.toLowerCase();
+		},
+	},
+	count: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (countString) {
+			return this.split(countString).length - 1;
 		},
 	},
 });
