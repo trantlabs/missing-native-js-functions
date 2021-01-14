@@ -116,8 +116,7 @@ Object.defineProperties(String.prototype, {
 		configurable: true,
 		writable: true,
 		value: function (containsString: string) {
-			var value = this.toLowerCase();
-			return value.includes(containsString.toLowerCase());
+			return this.toLowerCase().includes(containsString.toLowerCase());
 		}
 	}
 });
