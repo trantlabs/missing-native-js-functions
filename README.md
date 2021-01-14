@@ -40,6 +40,7 @@ Array {
 	unique(): T[]; // returns a new unique array with distinct values
 	shuffle(): T[]; // shuffles the current array
 	insert(elem: T, index: number): T[]; // insert an element at a specified index
+	count(search: RegExp | any): number; // returns total of found items for specified search
 }
 ```
 
@@ -53,7 +54,7 @@ Object {
 	equals(other: any): boolean; // checks if this Objects is the same with the other, WARNING this won't work with circular objects
 	keys(): string[]; //returns keys of object itself
 	values(): any[]; // returns values of object itself
-	entries():  Array<[string, any]> // returns a nested array of key and corresponding value of object itself
+	entries():  Array<[string, any]>; // returns a nested array of key and corresponding value of object itself
 }
 ```
 
@@ -65,9 +66,9 @@ String {
 	replaceAll(search: string, replace: string): string; // Replace all occurrences of search with replace
 	similarity(compare: string): number; // Returns a value between 0 (different) and 1 (same) indicating how similar the string is to compare
 	join(iterate: string[]): string; // Returns the array values seperated by the given divider as a string
-	partiton(): string[] // Returns split array, but includes separators
-	toNumber(): number // converts string to number, if not a number returns NaN
-	toBigInt(): number // converts string to BigInt, if not a number returns NaN
+	partition(): string[]; // Returns split array, but includes separators
+	toNumber(): number; // converts string to number, if not a number returns NaN
+	toBigInt(): number; // converts string to BigInt, if not a number returns NaN
 }
 ```
 
@@ -99,6 +100,27 @@ arr.insert(8);
 
 console.log(arr);
 // -> [4, 7, 5, 1, 6, 2, 3, 8]
+
+class Test {
+	constructor() {}
+}
+
+let array = ["test", "test", "test", "no", 2, 15, { 2: 14 }, new Test(), new Test()];
+
+console.log(array.count(Number));
+// -> 2
+console.log(array.count(String));
+// -> 4
+console.log(array.count(Object));
+// -> 1
+console.log(array.count(Test));
+// -> 2
+console.log(array.count(/[a-z]/));
+// -> 4
+console.log(array.count("test"));
+// -> 3
+console.log(array.count(15));
+// -> 1
 ```
 
 ### Object
