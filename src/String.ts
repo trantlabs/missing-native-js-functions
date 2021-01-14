@@ -62,7 +62,7 @@ Object.defineProperties(String.prototype, {
 			return iterate.join(this);
 		},
 	},
-	partiton: {
+	partition: {
 		enumerable: false,
 		configurable: true,
 		writable: true,
@@ -135,6 +135,7 @@ declare global {
 		partition(separator: string): string[];
 		toNumber(): number;
 		toBigInt(): bigint;
+		count(countString: regex | any): number;
 	}
 }
 export {};
