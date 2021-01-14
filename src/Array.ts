@@ -1,3 +1,5 @@
+import { type } from "os";
+
 Object.defineProperties(Array.prototype, {
 	remove: {
 		enumerable: false,
@@ -89,6 +91,43 @@ Object.defineProperties(Array.prototype, {
 			return found !== undefined ? map(found) : found;
 		},
 	},
+	count: {
+		enumerable: false,
+		writable: true,
+		configurable: true,
+		value: function (search: RegExp | any) {
+			const nativeTypes = ["string", "number", "object", "array"];
+			let count: number = 0;
+
+			this.forEach((element: any) => {
+				if (element === search) {
+					count++;
+					return;
+				}
+
+				// check if searchparam is a native class (l: 99)
+				if (typeof search == "function") {
+					const className = search.name.toLowerCase();
+					if (nativeTypes.includes(className) && typeof element === className) {
+						count++;
+						return;
+					} else if (element instanceof search) {
+						count++;
+						return;
+					}
+				}
+
+				// if element of array is a string: allow regex patterns
+				if (typeof element === "string") {
+					if (element.match(search)) {
+						count++;
+						return;
+					}
+				}
+			});
+			return count;
+		},
+	},
 });
 
 declare global {
@@ -102,6 +141,7 @@ declare global {
 		unique(): T[];
 		shuffle(): T[];
 		insert(elem: T, index: number): T[];
+		count(search: RegExp | any): number;
 	}
 }
 

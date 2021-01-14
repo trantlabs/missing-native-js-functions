@@ -9,6 +9,7 @@ declare global {
         unique(): T[];
         shuffle(): T[];
         insert(elem: T, index: number): T[];
+        count(search: RegExp | any): number;
     }
 }
 export {};

@@ -109,4 +109,39 @@ Object.defineProperties(Array.prototype, {
             return found !== undefined ? map(found) : found;
         },
     },
+    count: {
+        enumerable: false,
+        writable: true,
+        configurable: true,
+        value: function (search) {
+            var nativeTypes = ["string", "number", "object", "array"];
+            var count = 0;
+            this.forEach(function (element) {
+                if (element === search) {
+                    count++;
+                    return;
+                }
+                // check if searchparam is a native class (l: 99)
+                if (typeof search == "function") {
+                    if (nativeTypes.includes(search.name.toLowerCase()) &&
+                        typeof element === search.name.toLowerCase()) {
+                        count++;
+                        return;
+                    }
+                    else if (element instanceof search) {
+                        count++;
+                        return;
+                    }
+                }
+                // if element of array is a string: allow regex patterns
+                if (typeof element === "string") {
+                    if (element.match(search)) {
+                        count++;
+                        return;
+                    }
+                }
+            });
+            return count;
+        },
+    },
 });
