@@ -193,5 +193,5 @@ console.log(wordList.partition());
 // -> tHIS IS A tHONK tEXT
 
 "this is a test".title();
-// -> [ 'This Is A Test', 'THIS IS A TEST' ]
+// -> This Is A Test
 ```
