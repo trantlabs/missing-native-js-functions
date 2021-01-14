@@ -123,8 +123,8 @@ Object.defineProperties(Array.prototype, {
                 }
                 // check if searchparam is a native class (l: 99)
                 if (typeof search == "function") {
-                    if (nativeTypes.includes(search.name.toLowerCase()) &&
-                        typeof element === search.name.toLowerCase()) {
+                    var className = search.name.toLowerCase();
+                    if (nativeTypes.includes(className) && typeof element === className) {
                         count++;
                         return;
                     }

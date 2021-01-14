@@ -7,6 +7,18 @@ Object.defineProperties(String.prototype, {
 			return this.slice(0, 1).toUpperCase() + this.slice(1);
 		},
 	},
+	title: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return this.split(" ")
+				.map((element: string) => {
+					return element.capitalize();
+				})
+				.join(" ");
+		},
+	},
 	replaceAll: {
 		enumerable: false,
 		configurable: true,
@@ -99,9 +111,9 @@ Object.defineProperties(String.prototype, {
 		enumerable: false,
 		configurable: true,
 		writable: true,
-		value: function(compareString: String){
+		value: function (compareString: String) {
 			return this.toLowerCase() === compareString.toLowerCase();
-		}
+		},
 	},
 	count: {
 		enumerable: false,
@@ -109,8 +121,21 @@ Object.defineProperties(String.prototype, {
 		writable: true,
 		value: function (countString: string) {
 			return this.split(countString).length - 1;
-		}
-	}
+		},
+	},
+	swapcase: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return this.split("")
+				.map((char: string) => {
+					if (char === char.toUpperCase()) return char.toLowerCase();
+					return char.toUpperCase();
+				})
+				.join("");
+		},
+	},
 });
 
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js
@@ -127,7 +152,10 @@ declare global {
 		partition(separator: string): string[];
 		toNumber(): number;
 		toBigInt(): bigint;
-		count(countString: regex | any): number;
+		equalsIgnoreCase(compareString: string): string;
+		count(countString: RegExp | any): number;
+		swapcase(): string;
+		title(): string;
 	}
 }
 export {};

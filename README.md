@@ -69,6 +69,9 @@ String {
 	partition(): string[]; // Returns split array, but includes separators
 	toNumber(): number; // converts string to number, if not a number returns NaN
 	toBigInt(): number; // converts string to BigInt, if not a number returns NaN
+	count(countString: RegExp | any): number; // returns total of found items for specified search;
+	swapcase(): string;// Returns a swapped case string
+	title(): string; // converts the string into a title string
 }
 ```
 
@@ -185,4 +188,10 @@ console.log(wordList.partition());
 // -> 25: number
 "25".toBigInt();
 // -> 25n:
+
+"This is a Thonk Text".swapcase();
+// -> tHIS IS A tHONK tEXT
+
+"this is a test".title();
+// -> This Is A Test
 ```

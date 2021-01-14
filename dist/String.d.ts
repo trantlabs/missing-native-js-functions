@@ -6,9 +6,11 @@ declare global {
         join(iterate: string[]): string;
         partition(separator: string): string[];
         toNumber(): number;
-	    toBigInt(): bigint;
-	    equalsIgnoreCase(compareString: string): string;
-	    count(letter: string): number;
+        toBigInt(): bigint;
+        equalsIgnoreCase(compareString: string): string;
+        count(countString: RegExp | any): number;
+        swapcase(): string;
+        title(): string;
     }
 }
 export {};
