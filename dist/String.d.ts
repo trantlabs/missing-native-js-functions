@@ -7,9 +7,9 @@ declare global {
         partition(separator: string): string[];
         toNumber(): number;
 	    toBigInt(): bigint;
-	    equalsIgnoreCase(compareString: string): string;
+	    equalsIgnoreCase(compareString: string): boolean;
 		count(letter: string): number;
-		containsIgnoreCase(containsString: string): string;
+		containsIgnoreCase(containsString: string): boolean;
     }
 }
 export {};
