@@ -110,6 +110,15 @@ Object.defineProperties(String.prototype, {
 		value: function (countString: string) {
 			return this.split(countString).length - 1;
 		}
+	},
+	containsIgnoreCase: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (containsString: string) {
+			var value = this.toLowerCase();
+			return value.includes(containsString.toLowerCase());
+		}
 	}
 });
 

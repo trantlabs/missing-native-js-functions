@@ -119,6 +119,15 @@ Object.defineProperties(String.prototype, {
 		value: function (countString) {
 			return this.split(countString).length - 1;
 		}
+	},
+	containsIgnoreCase: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (containsString) {
+			var value = this.toLowerCase();
+			return value.includes(containsString.toLowerCase());
+		}
 	}
 });
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js

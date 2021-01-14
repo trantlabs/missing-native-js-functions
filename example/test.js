@@ -60,3 +60,7 @@ console.log(string3.equalsIgnoreCase("string"));
 const string4 = "This is my House, my House is very cool! And this House is small!";
 console.log(string4.count("House"))
 // -> 3
+
+//CONTAINTS EQUALS IGNORE CASE
+const string5 = "This is my hOusE"
+console.log(string5.containsIgnoreCase("HOUSE"));
