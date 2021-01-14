@@ -136,6 +136,8 @@ declare global {
 		toNumber(): number;
 		toBigInt(): bigint;
 		count(countString: regex | any): number;
+		equalsIgnoreCase(compareString: string): boolean;
+		containsIgnoreCase(containsString: string): boolean;
 	}
 }
 export {};
