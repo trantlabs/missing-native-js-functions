@@ -152,6 +152,7 @@ declare global {
 		partition(separator: string): string[];
 		toNumber(): number;
 		toBigInt(): bigint;
+		equalsIgnoreCase(compareString: string): string;
 		count(countString: RegExp | any): number;
 		swapcase(): string;
 		title(): string;
