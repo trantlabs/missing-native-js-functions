@@ -135,7 +135,7 @@ declare global {
 		partition(separator: string): string[];
 		toNumber(): number;
 		toBigInt(): bigint;
-		count(countString: regex | any): number;
+		count(countString: RegExp | any): number;
 		equalsIgnoreCase(compareString: string): boolean;
 		containsIgnoreCase(containsString: string): boolean;
 	}
