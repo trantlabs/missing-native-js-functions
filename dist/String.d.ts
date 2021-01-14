@@ -6,7 +6,9 @@ declare global {
         join(iterate: string[]): string;
         partition(separator: string): string[];
         toNumber(): number;
-        toBigInt(): bigint;
+	    toBigInt(): bigint;
+	    equalsIgnoreCase(compareString: string): string;
+	    count(letter: string): number;
     }
 }
 export {};
