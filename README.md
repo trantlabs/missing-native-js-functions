@@ -70,7 +70,8 @@ String {
 	toNumber(): number; // converts string to number, if not a number returns NaN
 	toBigInt(): number; // converts string to BigInt, if not a number returns NaN
 	count(countString: RegExp | any): number; // returns total of found items for specified search;
-	swapcase():// Returns a swapped case string
+	swapcase(): string;// Returns a swapped case string
+	title(): string; // converts the string into a title string
 }
 ```
 
@@ -190,4 +191,7 @@ console.log(wordList.partition());
 
 "This is a Thonk Text".swapcase();
 // -> tHIS IS A tHONK tEXT
+
+"this is a test".title();
+// -> [ 'This Is A Test', 'THIS IS A TEST' ]
 ```

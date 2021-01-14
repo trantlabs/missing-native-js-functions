@@ -9,6 +9,7 @@ declare global {
         toBigInt(): bigint;
         count(countString: RegExp | any): number;
         swapcase(): string;
+        title(): string;
     }
 }
 export {};

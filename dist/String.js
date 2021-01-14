@@ -9,6 +9,18 @@ Object.defineProperties(String.prototype, {
             return this.slice(0, 1).toUpperCase() + this.slice(1);
         },
     },
+    title: {
+        enumerable: false,
+        configurable: true,
+        writable: true,
+        value: function () {
+            return this.split(" ")
+                .map(function (element) {
+                return element.capitalize();
+            })
+                .join(" ");
+        },
+    },
     replaceAll: {
         enumerable: false,
         configurable: true,

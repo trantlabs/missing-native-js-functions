@@ -7,6 +7,18 @@ Object.defineProperties(String.prototype, {
 			return this.slice(0, 1).toUpperCase() + this.slice(1);
 		},
 	},
+	title: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return this.split(" ")
+				.map((element: string) => {
+					return element.capitalize();
+				})
+				.join(" ");
+		},
+	},
 	replaceAll: {
 		enumerable: false,
 		configurable: true,
@@ -142,6 +154,7 @@ declare global {
 		toBigInt(): bigint;
 		count(countString: RegExp | any): number;
 		swapcase(): string;
+		title(): string;
 	}
 }
 export {};
