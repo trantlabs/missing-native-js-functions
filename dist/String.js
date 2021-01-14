@@ -126,8 +126,7 @@ Object.defineProperties(String.prototype, {
 			var value = this.toLowerCase();
 			return value.includes(containsString.toLowerCase());
 		}
-	}
-		},
+
 	},
 });
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js
