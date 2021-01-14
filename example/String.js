@@ -16,3 +16,9 @@ console.log("this is NaN".toNumber());
 
 console.log("this is 3948653498563498563489563234986n as a bigint", "3948653498563498563489563234986".toBigInt());
 console.log("this is NaN".toBigInt());
+
+console.log("this string will be counted", "this string will be counted".count("e"));
+
+console.log("This String Will Swap Cases".swapcase());
+
+console.log("this string will be converted into a title string".title());
