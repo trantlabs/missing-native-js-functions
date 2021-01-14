@@ -6,10 +6,10 @@ declare global {
         join(iterate: string[]): string;
         partition(separator: string): string[];
         toNumber(): number;
-	    toBigInt(): bigint;
-	    equalsIgnoreCase(compareString: string): boolean;
-		count(letter: string): number;
-		containsIgnoreCase(containsString: string): boolean;
+	toBigInt(): bigint;
+	equalsIgnoreCase(compareString: string): boolean;
+        count(letter: string): number;
+        containsIgnoreCase(containsString: string): boolean;
     }
 }
 export {};
