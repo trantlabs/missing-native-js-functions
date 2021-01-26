@@ -4,7 +4,7 @@ declare global {
         flat(depth?: number): T;
         first(): T | undefined;
         last(): T | undefined;
-        findMap<T>(predicate: (value: T, index: number, obj: T[]) => unknown, map: (value: T) => any): any | undefined;
+        findMap<T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined;
         random(): T | undefined;
         unique(): T[];
         shuffle(): T[];

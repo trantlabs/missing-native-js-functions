@@ -81,12 +81,13 @@ Object.defineProperties(Array.prototype, {
 		enumerable: false,
 		writable: true,
 		configurable: true,
-		value: function <T>(
-			predicate: (value: T, index: number, obj: T[]) => unknown,
-			map: (value: T) => any
-		): any | undefined {
-			let found = this.find(predicate);
-			return found !== undefined ? map(found) : found;
+		value: function <T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined {
+			for (let i = 0; i < this.length; i++) {
+				var result = predicate(this[i], i, this);
+				if (result) {
+					return result;
+				}
+			}
 		},
 	},
 });
@@ -97,7 +98,7 @@ declare global {
 		flat(depth?: number): T;
 		first(): T | undefined;
 		last(): T | undefined;
-		findMap<T>(predicate: (value: T, index: number, obj: T[]) => unknown, map: (value: T) => any): any | undefined;
+		findMap<T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined;
 		random(): T | undefined;
 		unique(): T[];
 		shuffle(): T[];
