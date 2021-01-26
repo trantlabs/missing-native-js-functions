@@ -104,9 +104,13 @@ Object.defineProperties(Array.prototype, {
         enumerable: false,
         writable: true,
         configurable: true,
-        value: function (predicate, map) {
-            var found = this.find(predicate);
-            return found !== undefined ? map(found) : found;
+        value: function (predicate) {
+            for (var i = 0; i < this.length; i++) {
+                var result = predicate(this[i], i, this);
+                if (result) {
+                    return result;
+                }
+            }
         },
     },
     count: {
