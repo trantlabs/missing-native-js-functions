@@ -104,7 +104,11 @@ Object.defineProperties(String.prototype, {
 		configurable: true,
 		writable: true,
 		value: function () {
-			return BigInt(this);
+			try {
+				return BigInt(this);
+			} catch (error) {
+				return NaN;
+			}
 		},
 	},
 	equalsIgnoreCase: {
