@@ -113,6 +113,30 @@ Object.defineProperties(Array.prototype, {
             }
         },
     },
+    findLast: {
+        enumerable: false,
+        writable: true,
+        configurable: true,
+        value: function (predicate) {
+            for (var i = this.length; i >= 0; i--) {
+                if (predicate(this[i], i, this))
+                    return this[i];
+            }
+            return null;
+        },
+    },
+    findLastIndex: {
+        enumerable: false,
+        writable: true,
+        configurable: true,
+        value: function (predicate) {
+            for (var i = this.length - 1; i >= 0; i--) {
+                if (predicate(this[i], i, this))
+                    return i;
+            }
+            return -1;
+        },
+    },
     count: {
         enumerable: false,
         writable: true,
