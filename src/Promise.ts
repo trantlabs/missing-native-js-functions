@@ -12,7 +12,7 @@ Object.defineProperties(Promise.prototype, {
 
 declare global {
 	interface Promise<T> {
-		caught(): void;
+		caught(): this;
 	}
 }
 

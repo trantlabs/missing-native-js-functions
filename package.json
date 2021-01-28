@@ -10,7 +10,7 @@
 		"start": "npm run build && npm run test",
 		"build": "tsc -b .",
 		"rollup": "rollup -c",
-		"prepublishOnly": "npm run build && npm run rollup"
+		"prepublish": "npm run build && npm run rollup"
 	},
 	"repository": {
 		"type": "git",

@@ -1,6 +1,6 @@
 declare global {
     interface Promise<T> {
-        caught(): void;
+        caught(): this;
     }
 }
 export {};
