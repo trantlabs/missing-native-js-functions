@@ -96,7 +96,7 @@ Object.defineProperties(Array.prototype, {
 		enumerable: false,
 		writable: true,
 		configurable: true,
-		value: function <T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined {
+		value: function <T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): T | undefined {
 			for (let i = this.length; i >= 0; i--) {
 				if (predicate(this[i], i, this)) return this[i];
 			}
@@ -107,7 +107,7 @@ Object.defineProperties(Array.prototype, {
 		enumerable: false,
 		writable: true,
 		configurable: true,
-		value: function <T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined {
+		value: function <T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): number {
 			for (let i = this.length - 1; i >= 0; i--) {
 				if (predicate(this[i], i, this)) return i;
 			}
@@ -159,9 +159,9 @@ declare global {
 		flat(depth?: number): T;
 		first(): T | undefined;
 		last(): T | undefined;
-		findLastIndex<T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): number;
-		findMap<T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined;
-		findLast<T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): T | undefined;
+		findLastIndex(predicate: (value: T, index: number, obj: T[]) => any | undefined): number;
+		findLast(predicate: (value: T, index: number, obj: T[]) => any | undefined): T | undefined;
+		findMap(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined;
 		random(): T | undefined;
 		unique(): T[];
 		shuffle(): T[];
