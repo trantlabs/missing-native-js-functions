@@ -4,3 +4,4 @@ require("./Array");
 require("./Object");
 require("./String");
 require("./Global");
+require("./Promise");
