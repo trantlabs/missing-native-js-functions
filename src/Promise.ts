@@ -4,7 +4,8 @@ Object.defineProperties(Promise.prototype, {
 		configurable: true,
 		writable: true,
 		value: function () {
-			return this.catch(console.error);
+			this.catch(console.error);
+			return this;
 		},
 	},
 });
