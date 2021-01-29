@@ -1,3 +1,5 @@
+import deepmerge from "deepmerge";
+
 Object.defineProperties(Object.prototype, {
 	forEach: {
 		enumerable: false,
@@ -54,6 +56,15 @@ Object.defineProperties(Object.prototype, {
 			return Object.entries(this);
 		},
 	},
+	merge: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (obj: any): any {
+			// this will overwrite if obj has the same property
+			return deepmerge(obj, this);
+		},
+	},
 });
 
 // @ts-ignore
@@ -69,6 +80,7 @@ declare global {
 		keys(): string[];
 		values(): any[];
 		entries(): Array<[string, any]>;
+		merge(obj: any): any;
 	}
 }
 export {};

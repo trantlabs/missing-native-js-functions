@@ -15,3 +15,5 @@ console.log("should be equal", { username: "mnjsf", age: 1, size: "5kb", minifie
 console.log("keys", obj.keys());
 console.log("values", obj.values());
 console.log("entries", obj.entries());
+
+console.log("deepmerge objects", { user: { name: "test" } }.merge({ user: { id: 0, name: "test2" } }));

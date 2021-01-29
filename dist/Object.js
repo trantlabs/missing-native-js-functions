@@ -1,5 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+var deepmerge_1 = __importDefault(require("deepmerge"));
 Object.defineProperties(Object.prototype, {
     forEach: {
         enumerable: false,
@@ -55,6 +59,15 @@ Object.defineProperties(Object.prototype, {
         writable: true,
         value: function () {
             return Object.entries(this);
+        },
+    },
+    merge: {
+        enumerable: false,
+        configurable: true,
+        writable: true,
+        value: function (obj) {
+            // this will overwrite if obj has the same property
+            return deepmerge_1.default(obj, this);
         },
     },
 });

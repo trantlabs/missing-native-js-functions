@@ -10,7 +10,7 @@
 		"start": "npm run build && npm run test",
 		"build": "tsc -b .",
 		"rollup": "rollup -c",
-		"prepublish": "npm run build && npm run rollup"
+		"prepublish": "npm run build && npm run rollup && git add . && git commit -m build"
 	},
 	"repository": {
 		"type": "git",
@@ -37,5 +37,8 @@
 		"rollup-plugin-babel-minify": "^10.0.0",
 		"rollup-plugin-commonjs": "^10.1.0",
 		"rollup-plugin-node-resolve": "^5.2.0"
+	},
+	"dependencies": {
+		"deepmerge": "^4.2.2"
 	}
 }

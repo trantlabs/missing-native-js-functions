@@ -55,6 +55,7 @@ Object {
 	keys(): string[]; //returns keys of object itself
 	values(): any[]; // returns values of object itself
 	entries():  Array<[string, any]>; // returns a nested array of key and corresponding value of object itself
+	merge(obj: any): any // returns a new object deeply merged with obj, the current will overwrite obj, if obj has the same property 
 }
 ```
 
