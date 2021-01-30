@@ -151,6 +151,22 @@ Object.defineProperties(Array.prototype, {
 			return count;
 		},
 	},
+	missing: {
+		enumerable: false,
+		writable: true,
+		configurable: true,
+		value: function <T>(arr: T[]): T[] {
+			return this.filter((x: any) => !arr.includes(x));
+		},
+	},
+	similarities: {
+		enumerable: false,
+		writable: true,
+		configurable: true,
+		value: function <T>(arr: T[]): T[] {
+			return this.filter((x: any) => arr.includes(x));
+		},
+	},
 });
 
 declare global {
@@ -167,6 +183,8 @@ declare global {
 		shuffle(): T[];
 		insert(elem: T, index: number): T[];
 		count(search: RegExp | any): number;
+		similarities(arr: T[]): T[];
+		missing(arr: T[]): T[];
 	}
 }
 

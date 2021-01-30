@@ -12,6 +12,8 @@ declare global {
         shuffle(): T[];
         insert(elem: T, index: number): T[];
         count(search: RegExp | any): number;
+        similarities(arr: T[]): T[];
+        missing(arr: T[]): T[];
     }
 }
 export {};

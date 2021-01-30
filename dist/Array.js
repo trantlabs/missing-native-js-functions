@@ -172,4 +172,20 @@ Object.defineProperties(Array.prototype, {
             return count;
         },
     },
+    missing: {
+        enumerable: false,
+        writable: true,
+        configurable: true,
+        value: function (arr) {
+            return this.filter(function (x) { return !arr.includes(x); });
+        },
+    },
+    similarities: {
+        enumerable: false,
+        writable: true,
+        configurable: true,
+        value: function (arr) {
+            return this.filter(function (x) { return arr.includes(x); });
+        },
+    },
 });
