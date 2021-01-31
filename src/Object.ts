@@ -1,5 +1,3 @@
-import deepmerge from "deepmerge";
-
 Object.defineProperties(Object.prototype, {
 	forEach: {
 		enumerable: false,
@@ -60,15 +58,38 @@ Object.defineProperties(Object.prototype, {
 		enumerable: false,
 		configurable: true,
 		writable: true,
-		value: function (obj: any): any {
+		value: function (obj: any) {
 			// this will overwrite if obj has the same property
-			return deepmerge(obj, this);
+			return mergeDeep(obj, this);
 		},
 	},
 });
-
 // @ts-ignore
-Object.equals = (x: any, y: any): boolean => x.equals(y);
+Object.equals = function (x, y) {
+	return x.equals(y);
+};
+
+function mergeDeep(target: any, ...sources: any): any {
+	if (!sources.length) return target;
+	const source = sources.shift();
+
+	if (isObject(target) && isObject(source)) {
+		for (const key in source) {
+			if (isObject(source[key])) {
+				if (!target[key]) Object.assign(target, { [key]: {} });
+				mergeDeep(target[key], source[key]);
+			} else {
+				Object.assign(target, { [key]: source[key] });
+			}
+		}
+	}
+
+	return mergeDeep(target, ...sources);
+}
+
+function isObject(item: any) {
+	return item && typeof item === "object" && !Array.isArray(item) && item?.constructor?.name === "Object";
+}
 
 declare global {
 	interface Object {

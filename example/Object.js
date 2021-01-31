@@ -1,4 +1,5 @@
 require("../dist/Object");
+const { isPlainObject } = require("is-plain-object");
 
 const obj = { username: "mnjsf", age: 1, size: "5kb", minified: true };
 
@@ -16,4 +17,10 @@ console.log("keys", obj.keys());
 console.log("values", obj.values());
 console.log("entries", obj.entries());
 
-console.log("deepmerge objects", { user: { name: "test" } }.merge({ user: { id: 0, name: "test2" } }));
+class Test {}
+console.log(
+	"deepmerge objects",
+	{ user: { name: "test", test: new Test() } }.merge({ user: { id: 0, name: "test2" } })
+);
+
+var t = 0;

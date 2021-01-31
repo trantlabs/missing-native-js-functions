@@ -1,5 +1,7 @@
-import "./Array";
-import "./Object";
-import "./String";
-import "./Global";
-import "./Promise";
+try {
+	require("./Array");
+	require("./Object");
+	require("./String");
+	require("./Global");
+	require("./Promise");
+} catch (error) {}

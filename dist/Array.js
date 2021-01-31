@@ -83,6 +83,8 @@ Object.defineProperties(Array.prototype, {
     },
     random: {
         enumerable: false,
+        writable: true,
+        configurable: true,
         value: function () {
             return this[Math.floor(Math.random() * this.length)];
         },

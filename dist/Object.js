@@ -1,75 +1,135 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+var __read =
+	(this && this.__read) ||
+	function (o, n) {
+		var m = typeof Symbol === "function" && o[Symbol.iterator];
+		if (!m) return o;
+		var i = m.call(o),
+			r,
+			ar = [],
+			e;
+		try {
+			while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+		} catch (error) {
+			e = { error: error };
+		} finally {
+			try {
+				if (r && !r.done && (m = i["return"])) m.call(i);
+			} finally {
+				if (e) throw e.error;
+			}
+		}
+		return ar;
+	};
+var __spread =
+	(this && this.__spread) ||
+	function () {
+		for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+		return ar;
+	};
 Object.defineProperty(exports, "__esModule", { value: true });
-var deepmerge_1 = __importDefault(require("deepmerge"));
 Object.defineProperties(Object.prototype, {
-    forEach: {
-        enumerable: false,
-        configurable: true,
-        writable: true,
-        value: function (callback) {
-            var _this = this;
-            // @ts-ignore
-            return Object.keys(this).forEach(function (key) { return callback(_this[key], key); });
-        },
-    },
-    map: {
-        enumerable: false,
-        configurable: true,
-        writable: true,
-        value: function (callback) {
-            var _this = this;
-            var obj = {};
-            Object.keys(this).forEach(function (key) {
-                // @ts-ignore
-                obj[key] = callback(_this[key], key);
-            });
-            return obj;
-        },
-    },
-    equals: {
-        enumerable: false,
-        configurable: true,
-        writable: true,
-        value: function (other) {
-            return JSON.stringify(this) === JSON.stringify(other);
-        },
-    },
-    keys: {
-        enumerable: false,
-        configurable: true,
-        writable: true,
-        value: function () {
-            return Object.keys(this);
-        },
-    },
-    values: {
-        enumerable: false,
-        configurable: true,
-        writable: true,
-        value: function () {
-            return Object.values(this);
-        },
-    },
-    entries: {
-        enumerable: false,
-        configurable: true,
-        writable: true,
-        value: function () {
-            return Object.entries(this);
-        },
-    },
-    merge: {
-        enumerable: false,
-        configurable: true,
-        writable: true,
-        value: function (obj) {
-            // this will overwrite if obj has the same property
-            return deepmerge_1.default(obj, this);
-        },
-    },
+	forEach: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (callback) {
+			var _this = this;
+			// @ts-ignore
+			return Object.keys(this).forEach(function (key) {
+				return callback(_this[key], key);
+			});
+		},
+	},
+	map: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (callback) {
+			var _this = this;
+			var obj = {};
+			Object.keys(this).forEach(function (key) {
+				// @ts-ignore
+				obj[key] = callback(_this[key], key);
+			});
+			return obj;
+		},
+	},
+	equals: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (other) {
+			return JSON.stringify(this) === JSON.stringify(other);
+		},
+	},
+	keys: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return Object.keys(this);
+		},
+	},
+	values: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return Object.values(this);
+		},
+	},
+	entries: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function () {
+			return Object.entries(this);
+		},
+	},
+	merge: {
+		enumerable: false,
+		configurable: true,
+		writable: true,
+		value: function (obj) {
+			// this will overwrite if obj has the same property
+			return mergeDeep(obj, this);
+		},
+	},
 });
+
 // @ts-ignore
-Object.equals = function (x, y) { return x.equals(y); };
+Object.equals = function (x, y) {
+	return x.equals(y);
+};
+function mergeDeep(target) {
+	var _a, _b;
+	var sources = [];
+	for (var _i = 1; _i < arguments.length; _i++) {
+		sources[_i - 1] = arguments[_i];
+	}
+	if (!sources.length) return target;
+	var source = sources.shift();
+	if (isObject(target) && isObject(source)) {
+		for (var key in source) {
+			if (isObject(source[key])) {
+				if (!target[key]) Object.assign(target, ((_a = {}), (_a[key] = {}), _a));
+				mergeDeep(target[key], source[key]);
+			} else {
+				Object.assign(target, ((_b = {}), (_b[key] = source[key]), _b));
+			}
+		}
+	}
+	return mergeDeep.apply(void 0, __spread([target], sources));
+}
+function isObject(item) {
+	var _a;
+	return (
+		item &&
+		typeof item === "object" &&
+		!Array.isArray(item) &&
+		((_a = item === null || item === void 0 ? void 0 : item.constructor) === null || _a === void 0
+			? void 0
+			: _a.name) === "Object"
+	);
+}

@@ -1,5 +1,3 @@
-import { type } from "os";
-
 Object.defineProperties(Array.prototype, {
 	remove: {
 		enumerable: false,
@@ -63,6 +61,8 @@ Object.defineProperties(Array.prototype, {
 	},
 	random: {
 		enumerable: false,
+		writable: true,
+		configurable: true,
 		value: function () {
 			return this[Math.floor(Math.random() * this.length)];
 		},

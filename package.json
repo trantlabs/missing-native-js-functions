@@ -38,7 +38,5 @@
 		"rollup-plugin-commonjs": "^10.1.0",
 		"rollup-plugin-node-resolve": "^5.2.0"
 	},
-	"dependencies": {
-		"deepmerge": "^4.2.2"
-	}
+	"dependencies": {}
 }
