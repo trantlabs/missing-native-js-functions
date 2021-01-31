@@ -1,9 +1,7 @@
 "use strict";
-try {
-    require("./Array");
-    require("./Object");
-    require("./String");
-    require("./Global");
-    require("./Promise");
-}
-catch (error) { }
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./Array");
+require("./Object");
+require("./String");
+require("./Global");
+require("./Promise");

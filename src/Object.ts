@@ -1,73 +1,75 @@
-Object.defineProperties(Object.prototype, {
-	forEach: {
-		enumerable: false,
-		configurable: true,
-		writable: true,
-		value: function (callback: (element: any, index?: string) => any) {
-			// @ts-ignore
-			return Object.keys(this).forEach((key) => callback(this[key], key));
-		},
-	},
-	map: {
-		enumerable: false,
-		configurable: true,
-		writable: true,
-		value: function (callback: (element: any, index?: string) => any) {
-			let obj = {};
-
-			Object.keys(this).forEach((key) => {
+try {
+	Object.defineProperties(Object.prototype, {
+		forEach: {
+			enumerable: false,
+			configurable: true,
+			writable: true,
+			value: function (callback: (element: any, index?: string) => any) {
 				// @ts-ignore
-				obj[key] = callback(this[key], key);
-			});
-			return obj;
+				return Object.keys(this).forEach((key) => callback(this[key], key));
+			},
 		},
-	},
-	equals: {
-		enumerable: false,
-		configurable: true,
-		writable: true,
-		value: function (other: any): boolean {
-			return JSON.stringify(this) === JSON.stringify(other);
+		map: {
+			enumerable: false,
+			configurable: true,
+			writable: true,
+			value: function (callback: (element: any, index?: string) => any) {
+				let obj = {};
+
+				Object.keys(this).forEach((key) => {
+					// @ts-ignore
+					obj[key] = callback(this[key], key);
+				});
+				return obj;
+			},
 		},
-	},
-	keys: {
-		enumerable: false,
-		configurable: true,
-		writable: true,
-		value: function (): any[] {
-			return Object.keys(this);
+		equals: {
+			enumerable: false,
+			configurable: true,
+			writable: true,
+			value: function (other: any): boolean {
+				return JSON.stringify(this) === JSON.stringify(other);
+			},
 		},
-	},
-	values: {
-		enumerable: false,
-		configurable: true,
-		writable: true,
-		value: function (): any[] {
-			return Object.values(this);
+		keys: {
+			enumerable: false,
+			configurable: true,
+			writable: true,
+			value: function (): any[] {
+				return Object.keys(this);
+			},
 		},
-	},
-	entries: {
-		enumerable: false,
-		configurable: true,
-		writable: true,
-		value: function (): any[] {
-			return Object.entries(this);
+		values: {
+			enumerable: false,
+			configurable: true,
+			writable: true,
+			value: function (): any[] {
+				return Object.values(this);
+			},
 		},
-	},
-	merge: {
-		enumerable: false,
-		configurable: true,
-		writable: true,
-		value: function (obj: any) {
-			// this will overwrite if obj has the same property
-			return mergeDeep(obj, this);
+		entries: {
+			enumerable: false,
+			configurable: true,
+			writable: true,
+			value: function (): any[] {
+				return Object.entries(this);
+			},
 		},
-	},
-});
-// @ts-ignore
-Object.equals = function (x, y) {
-	return x.equals(y);
-};
+		merge: {
+			enumerable: false,
+			configurable: true,
+			writable: true,
+			value: function (obj: any) {
+				// this will overwrite if obj has the same property
+				return mergeDeep(obj, this);
+			},
+		},
+	});
+	// @ts-ignore
+	Object.equals = function (x, y) {
+		return x.equals(y);
+	};
+} catch (error) {}
 
 function mergeDeep(target: any, ...sources: any): any {
 	if (!sources.length) return target;
