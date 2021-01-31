@@ -1,5 +1,4 @@
 require("../dist/Object");
-const { isPlainObject } = require("is-plain-object");
 
 const obj = { username: "mnjsf", age: 1, size: "5kb", minified: true };
 
@@ -23,4 +22,5 @@ console.log(
 	{ user: { name: "test", test: new Test() } }.merge({ user: { id: 0, name: "test2" } })
 );
 
-var t = 0;
+const example_string = { "this is": "now a string", "this also": 25 }.stringify();
+console.log(example_string, typeof example_string);

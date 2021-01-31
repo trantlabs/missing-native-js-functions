@@ -87,6 +87,14 @@ try {
                 return mergeDeep(obj, this);
             },
         },
+        stringify: {
+            enumerable: false,
+            configurable: true,
+            writable: true,
+            value: function () {
+                return JSON.stringify(this);
+            },
+        },
     });
     // @ts-ignore
     Object.equals = function (x, y) {
