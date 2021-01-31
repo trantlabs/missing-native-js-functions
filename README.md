@@ -63,7 +63,8 @@ Object {
 	keys(): string[]; //returns keys of object itself
 	values(): any[]; // returns values of object itself
 	entries():  Array<[string, any]>; // returns a nested array of key and corresponding value of object itself
-	merge(obj: any): any // returns a new object deeply merged with obj, the current will overwrite obj, if obj has the same property. Notice will not merge classes
+	merge(obj: any): any; // returns a new object deeply merged with obj, the current will overwrite obj, if obj has the same property. Notice will not merge classes
+	stringify(): string; // parses the object to an string (trows errors if invalid input)
 }
 ```
 
@@ -81,6 +82,7 @@ String {
 	count(countString: RegExp | any): number; // returns total of found items for specified search;
 	swapcase(): string;// Returns a swapped case string -> aLL CASES ARE SWAPPED
 	title(): string; // converts the string into a title string -> This Is A Title String
+	toObject(): object; // parses the string to an object (trows errors if invalid input)
 }
 ```
 
