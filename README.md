@@ -1,8 +1,8 @@
 # missing-native-JS-functions
 
-mnJSf that should be the base lib for every JS project
+mnJSf that should be the base lib for every JS project whether for browser or nodejs
 
-This library extends the property of `Array`, `Object` and `Array`
+This library extends the properties of `Array`, `Object`, `Promise`, `Global` and `String`
 
 ## Installation
 
@@ -19,11 +19,17 @@ ES5 import
 require("missing-native-js-functions");
 ```
 
-or ES6 import
+ES6 import
 
 ```js
 import "missing-native-js-functions";
 ```
+
+use in Browser
+```html
+<script src="https://cdn.jsdelivr.net/npm/missing-native-js-functions/dist/mnjsf.min.js"></script>
+```
+
 
 ## [Reference](/dist/index.d.ts)
 
@@ -41,6 +47,8 @@ Array {
 	shuffle(): T[]; // shuffles the current array
 	insert(elem: T, index: number): T[]; // insert an element at a specified index
 	count(search: RegExp | any): number; // returns total of found items for specified search
+	similarities(arr: T[]): T[]; // returns a new array with elements that are both in this array and in the comparison array
+	missing(arr: T[]): T[]; // returns a new array with elements that are in this array, but are missing in the comparison array
 }
 ```
 
@@ -55,7 +63,7 @@ Object {
 	keys(): string[]; //returns keys of object itself
 	values(): any[]; // returns values of object itself
 	entries():  Array<[string, any]>; // returns a nested array of key and corresponding value of object itself
-	merge(obj: any): any // returns a new object deeply merged with obj, the current will overwrite obj, if obj has the same property 
+	merge(obj: any): any // returns a new object deeply merged with obj, the current will overwrite obj, if obj has the same property. Notice will not merge classes
 }
 ```
 
@@ -67,12 +75,29 @@ String {
 	replaceAll(search: string, replace: string): string; // Replace all occurrences of search with replace
 	similarity(compare: string): number; // Returns a value between 0 (different) and 1 (same) indicating how similar the string is to compare
 	join(iterate: string[]): string; // Returns the array values seperated by the given divider as a string
-	partition(): string[]; // Returns split array, but includes separators
+	partition(separator: string): string[]; // Returns split array, but includes separators
 	toNumber(): number; // converts string to number, if not a number returns NaN
 	toBigInt(): number; // converts string to BigInt, if not a number returns NaN
 	count(countString: RegExp | any): number; // returns total of found items for specified search;
-	swapcase(): string;// Returns a swapped case string
-	title(): string; // converts the string into a title string
+	swapcase(): string;// Returns a swapped case string -> aLL CASES ARE SWAPPED
+	title(): string; // converts the string into a title string -> This Is A Title String
+}
+```
+
+### [Promise](/dist/Promise.d.ts)
+
+```ts
+Promise {
+	caught(): this; // catch all errors in the console without the need to specify a function, similar like promise.catch(console.error)
+}
+```
+
+### [Global](/dist/Global.d.ts)
+
+```ts
+Global {
+    function atob(data: string): string; // Converts a Base64 encoded string back to UTF-8
+    function btoa(data: string): string; // Converts a UTF-8 string to a Base64 encoded string
 }
 ```
 
@@ -125,6 +150,18 @@ console.log(array.count("test"));
 // -> 3
 console.log(array.count(15));
 // -> 1
+
+console.log("last number divisable by 2: " + arr.findLast((x) => x % 2 == 0));
+// -> 8
+console.log("index of it: " + arr.findLastIndex((x) => x % 2 == 0));
+// -> 7
+
+console.log("Similarities between to arrays", [0, 1, 2, 3, 4].similarities([0, 2, 4, 6, 8, 10]));
+// -> [ 0, 2, 4 ]
+
+console.log("Missing values in comparison array", [0, 1, 2, 3, 4, 5].missing([0, 5]));
+// -> [ 1, 2, 3, 4 ]
+
 ```
 
 ### Object
@@ -182,17 +219,37 @@ console.log(", ".join(words));
 // -> test, hello, 1234
 
 const wordList = "test.hello.1234";
-console.log(wordList.partition());
+console.log(wordList.partition("."));
 // -> ["test", ".", "hello", ".", "1234"]
 
 "25".toNumber();
-// -> 25: number
+// -> 25
+
 "25".toBigInt();
-// -> 25n:
+// -> 25n
 
 "This is a Thonk Text".swapcase();
 // -> tHIS IS A tHONK tEXT
 
 "this is a test".title();
 // -> This Is A Test
+```
+
+### Promise
+```js
+new Promise((res, rej) => {
+	rej("Promised rejected, but caught in console.error");
+}).caught();
+// -> will not throw the promise, but log the error in the console
+```
+
+### Global
+```js
+const convert = "this string will be base64 encoded";
+const converted = btoa("this string was base64 encoded");
+console.log(convert, btoa(convert));
+// -> this string will be base64 encoded dGhpcyBzdHJpbmcgd2lsbCBiZSBiYXNlNjQgZW5jb2RlZA==
+
+console.log(atob(converted), converted);
+// -> this string was base64 encoded dGhpcyBzdHJpbmcgd2FzIGJhc2U2NCBlbmNvZGVk
 ```
