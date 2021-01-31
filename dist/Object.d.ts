@@ -8,6 +8,7 @@ declare global {
         values(): any[];
         entries(): Array<[string, any]>;
         merge(obj: any): any;
+        stringify(): string;
     }
 }
 export {};

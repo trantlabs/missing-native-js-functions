@@ -145,6 +145,14 @@ try {
 					.join("");
 			},
 		},
+		toObject: {
+			enumerable: false,
+			configurable: true,
+			writable: true,
+			value: function () {
+				return JSON.parse(this);
+			},
+		},
 	});
 } catch (error) {}
 
@@ -166,6 +174,7 @@ declare global {
 		count(countString: RegExp | any): number;
 		swapcase(): string;
 		title(): string;
+		toObject(): object;
 	}
 }
 export {};

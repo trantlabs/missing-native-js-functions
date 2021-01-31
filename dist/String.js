@@ -154,6 +154,14 @@ try {
                     .join("");
             },
         },
+        toObject: {
+            enumerable: false,
+            configurable: true,
+            writable: true,
+            value: function () {
+                return JSON.parse(this);
+            },
+        },
     });
 }
 catch (error) { }
