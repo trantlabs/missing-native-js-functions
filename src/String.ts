@@ -107,6 +107,7 @@ declare global {
 		count(countString: RegExp | any): number;
 		swapcase(): string;
 		title(): string;
+		toObject(): object;
 	}
 }
 export {};

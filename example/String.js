@@ -22,3 +22,5 @@ console.log("this string will be counted", "this string will be counted".count("
 console.log("This String Will Swap Cases".swapcase());
 
 console.log("this string will be converted into a title string".title());
+const example_str = '{"this object":"is now parsed"}'.toObject();
+console.log(example_str, typeof example_str);
