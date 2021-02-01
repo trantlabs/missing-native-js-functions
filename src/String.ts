@@ -87,6 +87,9 @@ define(String.prototype, {
 			})
 			.join("");
 	},
+	toObject: function () {
+		return JSON.parse(this);
+	},
 });
 
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js

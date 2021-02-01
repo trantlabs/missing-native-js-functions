@@ -30,6 +30,9 @@ define(Object.prototype, {
 		// this will overwrite if obj has the same property
 		return mergeDeep(obj || {}, this);
 	},
+	stringify: function () {
+		return JSON.stringify(this);
+	},
 });
 
 define(Object, {

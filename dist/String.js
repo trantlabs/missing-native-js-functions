@@ -95,6 +95,9 @@ Util_1.define(String.prototype, {
         })
             .join("");
     },
+    toObject: function () {
+        return JSON.parse(this);
+    },
 });
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js
 // MIT License Copyright (c) 2018 Akash Kurdekar
