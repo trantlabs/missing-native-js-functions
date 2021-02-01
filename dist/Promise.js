@@ -1,16 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-try {
-    Object.defineProperties(Promise.prototype, {
-        caught: {
-            enumerable: false,
-            configurable: true,
-            writable: true,
-            value: function () {
-                this.catch(console.error);
-                return this;
-            },
-        },
-    });
-}
-catch (error) { }
+var Util_1 = require("./Util");
+Util_1.define(Promise.prototype, {
+    caught: function () {
+        this.catch(console.error);
+        return this;
+    },
+});

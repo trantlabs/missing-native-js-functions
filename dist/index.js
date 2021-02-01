@@ -5,3 +5,4 @@ require("./Object");
 require("./String");
 require("./Global");
 require("./Promise");
+require("./Math");

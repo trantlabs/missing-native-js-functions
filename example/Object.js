@@ -1,5 +1,4 @@
 require("../dist/Object");
-const { isPlainObject } = require("is-plain-object");
 
 const obj = { username: "mnjsf", age: 1, size: "5kb", minified: true };
 

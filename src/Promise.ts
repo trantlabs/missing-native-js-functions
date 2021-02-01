@@ -1,16 +1,11 @@
-try {
-	Object.defineProperties(Promise.prototype, {
-		caught: {
-			enumerable: false,
-			configurable: true,
-			writable: true,
-			value: function () {
-				this.catch(console.error);
-				return this;
-			},
-		},
-	});
-} catch (error) {}
+import { define } from "./Util";
+
+define(Promise.prototype, {
+	caught: function () {
+		this.catch(console.error);
+		return this;
+	},
+});
 
 declare global {
 	interface Promise<T> {

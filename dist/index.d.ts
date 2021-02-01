@@ -3,3 +3,4 @@ import "./Object";
 import "./String";
 import "./Global";
 import "./Promise";
+import "./Math";
