@@ -87,7 +87,7 @@ code {
 .code_div {
 	padding: 0.5rem;
 	height: fit-content;
-	width: 50%;
+	width: 60%;
 	background-color: var(--code_bg);
 	margin-bottom: 1rem;
 }
@@ -151,6 +151,9 @@ code {
 	padding-left: 3rem;
 }
 hr {
-	width: 50%;
+	width: 60%;
 	margin: 2rem 2rem 2rem 0;
+}
+.tab {
+	margin-left: 2rem !important;
 }
