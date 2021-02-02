@@ -26,9 +26,10 @@
 						/>
 						Functions
 					</button>
+
 					<a href="index.html" class="list-group-item list-group-item-action" id="first_">mnJSf</a>
 
-					<a href="global.html" class="list-group-item list-group-item-action active">Global</a>
+					<a href="global.html" class="list-group-item list-group-item-action">Global</a>
 					<a href="global.html#atob" class="list-group-item list-group-item-action" id="third_">atob</a>
 					<a href="global.html#btoa" class="list-group-item list-group-item-action" id="third_">btoa</a>
 
@@ -42,12 +43,12 @@
 
 					<a href="object.html" class="list-group-item list-group-item-action">Object</a>
 
-					<a href="math.html" class="list-group-item list-group-item-action">Math</a>
+					<a href="math.html" class="list-group-item list-group-item-action active">Math</a>
 				</div>
 			</div>
 			<div class="container_right">
 				<h1 class="doc_headers">
-					<a href="https://github.com/Flam3rboy/missing-native-JS-functions/blob/main/src/Global.ts">
+					<a href="https://github.com/Flam3rboy/missing-native-JS-functions/blob/main/src/Math.ts">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="32"
@@ -62,13 +63,12 @@
 							<path
 								d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"
 							/>
-						</svg>
-					</a>
-					Global
+						</svg> </a
+					>Math
 				</h1>
 				<hr />
 				<h2 class="doc_headers">
-					<a href="https://github.com/Flam3rboy/missing-native-JS-functions/blob/main/src/Global.ts#L9-L10">
+					<a href="https://github.com/Flam3rboy/missing-native-JS-functions/blob/main/src/Math.ts#L4-L9">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="32"
@@ -85,20 +85,22 @@
 							/>
 						</svg>
 					</a>
-					atob
+					randomBetween
 				</h2>
-				<p>Converts a Base64 encoded string to UTF-8</p>
+				<p>Generates a random integer between min and max</p>
 				<div class="code_div">
 					<p>
 						<code
-							><span class="key_word">function</span> <span class="function">atob</span>(<span class="tag"
-								>data</span
-							>: <span class="type">string</span>): <span class="type">string</span>;</code
+							><span class="tag">static</span> <span class="function">randomBetween</span>(<span
+								class="var"
+								>min</span
+							>: <span class="type">number</span>, <span class="var">max</span>:
+							<span class="type">number</span>): <span class="type">number</span>;</code
 						>
 					</p>
 				</div>
 				<h2 class="doc_headers">
-					<a href="https://github.com/Flam3rboy/missing-native-JS-functions/blob/main/src/Global.ts#L9-L10">
+					<a href="https://github.com/Flam3rboy/missing-native-JS-functions/blob/main/src/Math.ts#L4-L9">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="32"
@@ -115,22 +117,23 @@
 							/>
 						</svg>
 					</a>
-					btoa
+					randomBetween
 				</h2>
-				<p>Converts a UTF-8 string to a Base64 encoded string</p>
+				<p>Generates a random floating point number between min and max</p>
 				<div class="code_div">
 					<p>
 						<code
-							><span class="key_word">function</span> <span class="function">btoa</span
-							><span class="function_braces">(</span><span class="tag">data</span>:
-							<span class="type">string</span><span class="function_braces">)</span>:
-							<span class="type">string</span>;</code
+							><span class="tag">static</span> <span class="function">randomIntBetween</span>(<span
+								class="var"
+								>min</span
+							>: <span class="type">number</span>, <span class="var">max</span>:
+							<span class="type">number</span>): <span class="type">number</span>;</code
 						>
 					</p>
 				</div>
 				<hr />
-				<h2 class="doc_headers">
-					<a href="https://github.com/Flam3rboy/missing-native-JS-functions/blob/main/example/Global.js">
+				<h2>
+					<a href="https://github.com/Flam3rboy/missing-native-JS-functions/blob/main/example/Math.js">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="32"
@@ -150,47 +153,35 @@
 				</h2>
 				<div class="code_div">
 					<p>
-						<code>
-							<span class="var">convert</span> =
-							<span class="string">"this string will be base64 encoded"</span>;</code
-						>
-					</p>
-					<p>
-						<code>
-							<span class="var">converted</span> = <span class="function">btoa</span>(<span class="string"
-								>"this string was base64 encoded"</span
-							>);<br
-						/></code>
-					</p>
-					<p>
 						<code
-							><span class="var">console</span>.<span class="function">log</span>(<span class="var"
-								>convert</span
-							>, <span class="function">btoa</span>(<span class="var">convert</span>));</code
-						>
-					</p>
-					<p>
-						<code
-							><span class="comment">
-								// -> this string will be base64 encoded
-								dGhpcyBzdHJpbmcgd2lsbCBiZSBiYXNlNjQgZW5jb2RlZA==
-							</span>
+							><span class="var">console</span>.<span class="function">log</span>(<span class="string"
+								>"Random number between 1-10:\n->"</span
+							>, <span class="var">Math</span>.<span class="function">randomBetween</span>(<span
+								class="int"
+								>1</span
+							>, <span class="int">10</span>));
 						</code>
 					</p>
 					<p>
-						<code
-							><span class="var">console</span>.<span class="function">log</span>(<span class="function"
-								>atob</span
-							>(<span class="var">converted</span>), <span class="var">converted</span>);</code
-						>
+						<code><span class="comment">// Random number between 1-10: </span></code>
+					</p>
+					<p>
+						<code><span class="comment">// -> 8.54098</span></code>
 					</p>
 					<p>
 						<code
-							><span class="comment"
-								>// -> this string was base64 encoded dGhpcyBzdHJpbmcgd2FzIGJhc2U2NCBlbmNvZGVk</span
-							></code
+							><span class="var">console</span>.<span class="function">log</span>(<span class="string"
+								>"Random number between 1-10:\n->"</span
+							>, <span class="var">Math</span>.<span class="function">randomIntBetween</span>(<span
+								class="int"
+								>1</span
+							>, <span class="int">10</span>));</code
 						>
 					</p>
+					<p>
+						<code><span class="comment">// Random int between 1-10:</span></code>
+					</p>
+					<code><span class="comment">// -> 5</span></code>
 				</div>
 			</div>
 		</div>

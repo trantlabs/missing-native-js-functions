@@ -118,15 +118,22 @@ code {
 .function {
 	color: #dcdca3;
 }
-
 .var {
 	color: #9cdcfe;
+}
+.int {
+	color: #abc290;
 }
 /*syntaxhighlight*/
 
 .doc_headers {
 	padding: 0.5rem 0;
 	margin-top: 2rem;
+	display: flex;
+	align-items: center;
+}
+.doc_headers > a {
+	margin-right: 0.5rem;
 }
 .container_right > p {
 	font-size: 14pt;
