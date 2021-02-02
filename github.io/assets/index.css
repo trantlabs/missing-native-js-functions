@@ -147,8 +147,13 @@ code {
 	padding-left: 1rem;
 }
 
+#second_ {
+	font-weight: bold;
+}
+
 #third_ {
 	padding-left: 3rem;
+	font-style: italic;
 }
 hr {
 	width: 60%;
