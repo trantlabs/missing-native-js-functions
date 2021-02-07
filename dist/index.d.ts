@@ -1,6 +1,8 @@
 import "./Array";
-import "./Object";
-import "./String";
 import "./Global";
-import "./Promise";
+import "./JSON";
 import "./Math";
+import "./Number";
+import "./Object";
+import "./Promise";
+import "./String";
