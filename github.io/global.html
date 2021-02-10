@@ -99,7 +99,8 @@
 				<div class="code_div">
 					<p>
 						<code
-							><span class="key_word">function</span> <span class="function">atob</span>(<span class="tag"
+							><span class="key_word">function</span> <span class="function">atob</span>(<span
+								class="tag_"
 								>data</span
 							>: <span class="type">string</span>): <span class="type">string</span>;</code
 						>
@@ -130,7 +131,7 @@
 					<p>
 						<code
 							><span class="key_word">function</span> <span class="function">btoa</span
-							><span class="function_braces">(</span><span class="tag">data</span>:
+							><span class="function_braces">(</span><span class="tag_">data</span>:
 							<span class="type">string</span><span class="function_braces">)</span>:
 							<span class="type">string</span>;</code
 						>
@@ -156,57 +157,26 @@
 						</svg> </a
 					>Examples
 				</h2>
-				<div class="code_div">
-					<p>
-						<code>
-							<span class="var">convert</span> =
-							<span class="string">"this string will be base64 encoded"</span>;</code
-						>
-					</p>
-					<p>
-						<code>
-							<span class="var">converted</span> = <span class="function">btoa</span>(<span class="string"
-								>"this string was base64 encoded"</span
-							>);<br
-						/></code>
-					</p>
-					<p>
-						<code
-							><span class="var">console</span>.<span class="function">log</span>(<span class="var"
-								>convert</span
-							>, <span class="function">btoa</span>(<span class="var">convert</span>));</code
-						>
-					</p>
-					<p>
-						<code
-							><span class="comment">
-								// -> this string will be base64 encoded
-								dGhpcyBzdHJpbmcgd2lsbCBiZSBiYXNlNjQgZW5jb2RlZA==
-							</span>
-						</code>
-					</p>
-					<p>
-						<code
-							><span class="var">console</span>.<span class="function">log</span>(<span class="function"
-								>atob</span
-							>(<span class="var">converted</span>), <span class="var">converted</span>);</code
-						>
-					</p>
-					<p>
-						<code
-							><span class="comment"
-								>// -> this string was base64 encoded dGhpcyBzdHJpbmcgd2FzIGJhc2U2NCBlbmNvZGVk</span
-							></code
-						>
-					</p>
+				<!-- ? method1: https://gist-it.appspot.com/ -->
+				<div class="code_div_example">
+					<script src="http://gist-it.appspot.com/https://github.com/Flam3rboy/missing-native-JS-functions/blob/main/example/Global.js"></script>
 				</div>
+
+				<!-- ? method2: https://github.com/kag0/sauce -->
+				<!-- <sauce-code
+					class="code_div_example"
+					repo="Flam3rboy/missing-native-JS-functions"
+					file="example/Global.js"
+					theme="atom-one-dark"
+				></sauce-code> -->
 			</div>
 		</div>
-
+		<script src="./assets/main.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 			crossorigin="anonymous"
 		></script>
+		<!-- <script type="module" src="https://kag0.github.io/sauce/sauce.js"></script> -->
 	</body>
 </html>

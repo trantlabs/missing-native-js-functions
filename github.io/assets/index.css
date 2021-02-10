@@ -4,6 +4,7 @@
 	--js_black: #181818;
 	--accent: #f0dc4e;
 	--accent-trans: rgba(240, 221, 78, 0.1);
+	--grey: #eaeaea;
 	--code_bg: #1e1e1e;
 }
 
@@ -71,6 +72,7 @@ a {
 	margin-left: 2rem;
 	margin-top: 1rem;
 	padding-bottom: 2rem;
+	margin-bottom: 2rem;
 	height: 100%;
 	width: 100%;
 	overflow: auto;
@@ -91,13 +93,24 @@ code {
 	background-color: var(--code_bg);
 	margin-bottom: 1rem;
 }
+.code_div_example {
+	padding: 0.5rem;
+	display: block;
+	height: fit-content;
+	width: 60% !important;
+	background-color: none !important;
+	margin-bottom: 1rem;
+}
+/* .code_div_example::host(div) {
+	display: none;
+} */
 .code_div > p {
 	margin: 0;
 }
 .comment {
 	color: #597e49;
 }
-.tag {
+.tag_ {
 	color: #4594cc;
 }
 .inner_tag {
@@ -153,6 +166,7 @@ code {
 
 #third_ {
 	padding-left: 3rem;
+	background-color: var(--code_bg);
 	font-style: italic;
 }
 hr {
@@ -161,4 +175,13 @@ hr {
 }
 .tab {
 	margin-left: 2rem !important;
+}
+
+/* TODO: hacky way to display example*/
+.gist-file {
+	font-family: inherit !important;
+}
+.prettyprint {
+	font-family: var(--bs-font-monospace) !important;
+	background: var(--grey) !important;
 }
