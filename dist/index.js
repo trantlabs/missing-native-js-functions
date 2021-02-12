@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("./Array");
-require("./Object");
-require("./String");
 require("./Global");
+require("./JSON");
+require("./Math");
+require("./Number");
+require("./Object");
 require("./Promise");
+require("./String");

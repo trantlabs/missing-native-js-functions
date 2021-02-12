@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Util_1 = require("./Util");
-Util_1.define(Promise.prototype, {
-    caught: function () {
-        this.catch(console.error);
-        return this;
+Util_1.define(Number.prototype, {
+    toInt: function () {
+        return Math.floor(this);
     },
 });

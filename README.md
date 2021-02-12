@@ -2,7 +2,7 @@
 
 mnJSf that should be the base lib for every JS project whether for browser or nodejs
 
-This library extends the properties of `Array`, `Object`, `Promise`, `Global` and `String`
+This library extends the properties of `Array`, `Object`, `Promise`, `Global`, `Math`, `Number` and `String`
 
 ## Installation
 
@@ -100,6 +100,23 @@ Promise {
 Global {
     function atob(data: string): string; // Converts a Base64 encoded string back to UTF-8
     function btoa(data: string): string; // Converts a UTF-8 string to a Base64 encoded string
+}
+```
+
+### [Number](/dist/Number.d.ts)
+
+```ts
+Number {
+	toInt(): number; // converts the current number to an integer (remove the numbers after the dot)
+}
+```
+
+### [Math](/dist/Math.d.ts)
+
+```ts
+Math {
+	static randomBetween(min: number, max: number): number; // generates a random floating point number between min and max
+	static randomIntBetween(min: number, max: number): number; // generates a random integer between min and max
 }
 ```
 
@@ -261,4 +278,21 @@ console.log(convert, btoa(convert));
 
 console.log(atob(converted), converted);
 // -> this string was base64 encoded dGhpcyBzdHJpbmcgd2FzIGJhc2U2NCBlbmNvZGVk
+```
+
+### Number
+
+```js
+const x = 3.14;
+console.log(`Floating point number ${x} to int: `, x.toInt());
+// -> 3
+```
+
+### Math
+```js
+console.log("Random number between 1-10", Math.randomBetween(1, 10));
+// -> 8.54098
+
+console.log("Random int between 1-10", Math.randomIntBetween(1, 10));
+// -> 5
 ```

@@ -1,3 +1,4 @@
+/// <reference types="node" />
 declare global {
     /**
      * Converts a Base64 encoded string
@@ -9,5 +10,6 @@ declare global {
      * @param {string} data UTF-8 string that should get encoded
      */
     function btoa(data: string): string;
+    function setIntervalNow(callback: Function, milliseconds?: number, ...args: any[]): number | NodeJS.Timeout;
 }
 export {};
