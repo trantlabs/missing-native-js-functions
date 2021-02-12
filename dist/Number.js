@@ -6,3 +6,4 @@ Util_1.define(Number.prototype, {
         return Math.floor(this);
     },
 });
+//# sourceMappingURL=Number.js.map

@@ -6,3 +6,5 @@ import "./Number";
 import "./Object";
 import "./Promise";
 import "./String";
+
+Date.now();

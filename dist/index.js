@@ -8,3 +8,5 @@ require("./Number");
 require("./Object");
 require("./Promise");
 require("./String");
+Date.now();
+//# sourceMappingURL=index.js.map
