@@ -143,6 +143,7 @@
 					</a>
 					forEach
 				</h2>
+				<p>callback is called for every element in object</p>
 				<div class="code_div">
 					<p>
 						<code
@@ -152,7 +153,7 @@
 							>: <span class="type">any</span>, <span class="var">index?</span>:
 							<span class="type">string</span>) => <span class="key_word">any</span>):<span class="type">
 								void</span
-							>; <span class="comment"> // callback is called for every element in object</span></code
+							>;</code
 						>
 					</p>
 				</div>
@@ -176,6 +177,7 @@
 					</a>
 					map
 				</h2>
+				<p>callback is called for every element in object and the result is returned as a new object</p>
 				<div class="code_div">
 					<p>
 						<code
@@ -185,11 +187,7 @@
 							>: <span class="type">any</span>, <span class="var">index?</span>:
 							<span class="type">string</span>) => <span class="key_word">this</span>):<span class="type">
 								void</span
-							>;
-							<span class="comment">
-								// callback is called for every element in object and the result is returned as a new
-								object</span
-							></code
+							>;</code
 						>
 					</p>
 				</div>
@@ -213,16 +211,13 @@
 					</a>
 					equals
 				</h2>
+				<p>checks if this Objects is the same with the other, WARNING this won't work with circular objects</p>
 				<div class="code_div">
 					<p>
 						<code
 							><span class="function">equals</span>(<span class="var">other</span>:
 							<span class="type">any</span>):<span class="type"> boolean</span>;
-							<span class="comment">
-								// checks if this Objects is the same with the other, WARNING this won't work with
-								circular objects</span
-							></code
-						>
+						</code>
 					</p>
 				</div>
 				<h2 class="doc_headers">
@@ -245,12 +240,10 @@
 					</a>
 					keys
 				</h2>
+				<p>returns keys of object itself</p>
 				<div class="code_div">
 					<p>
-						<code
-							><span class="function">keys</span>():<span class="type"> string[]</span>;
-							<span class="comment"> //returns keys of object itself</span></code
-						>
+						<code><span class="function">keys</span>():<span class="type"> string[]</span>; </code>
 					</p>
 				</div>
 				<h2 class="doc_headers">
@@ -273,12 +266,10 @@
 					</a>
 					values
 				</h2>
+				<p>returns values of object itself</p>
 				<div class="code_div">
 					<p>
-						<code
-							><span class="function">values</span>():<span class="type"> any[]</span>;
-							<span class="comment"> //returns values of object itself</span></code
-						>
+						<code><span class="function">values</span>():<span class="type"> any[]</span>; </code>
 					</p>
 				</div>
 				<h2 class="doc_headers">
@@ -301,16 +292,14 @@
 					</a>
 					entries
 				</h2>
+				<p>returns a nested array of key and corresponding value of object itself</p>
 				<div class="code_div">
 					<p>
 						<code
 							><span class="function">entries</span>():<span class="type">
 								Array&lt;[string, any]&gt;</span
 							>;
-							<span class="comment">
-								// returns a nested array of key and corresponding value of object itself</span
-							></code
-						>
+						</code>
 					</p>
 				</div>
 				<h2 class="doc_headers">
@@ -333,16 +322,16 @@
 					</a>
 					merge
 				</h2>
+				<p>
+					returns a new object deeply merged with obj, the current will overwrite obj, if obj has the same
+					property. Notice will not merge classes
+				</p>
 				<div class="code_div">
 					<p>
 						<code
 							><span class="function">merge</span>(<span class="var">obj</span>:
 							<span class="type">any</span>):<span class="type"> any</span>;
-							<span class="comment">
-								// returns a new object deeply merged with obj, the current will overwrite obj, if obj
-								has the same property. Notice will not merge classes</span
-							></code
-						>
+						</code>
 					</p>
 				</div>
 				<h2 class="doc_headers">
@@ -365,14 +354,10 @@
 					</a>
 					stringify
 				</h2>
+				<p>parses the object to an string (trows errors if invalid input)</p>
 				<div class="code_div">
 					<p>
-						<code
-							><span class="function">stringify</span>():<span class="type"> string</span>;
-							<span class="comment">
-								// parses the object to an string (trows errors if invalid input)</span
-							></code
-						>
+						<code><span class="function">stringify</span>():<span class="type"> string</span>; </code>
 					</p>
 				</div>
 				<hr />
