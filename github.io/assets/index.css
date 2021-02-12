@@ -24,8 +24,9 @@ body {
 .navbar_ {
 	background-color: var(--main);
 	height: 100%;
+	overflow: auto;
 	/* width: fit-content; */
-	min-width: 19rem;
+	min-width: 20rem;
 }
 
 .list-group-item.list-group-item-action {
