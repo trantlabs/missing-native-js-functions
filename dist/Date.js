@@ -6,3 +6,4 @@ Util_1.define(Date, {
         return Math.floor(Date.now() / 1000);
     },
 });
+//# sourceMappingURL=Date.js.map

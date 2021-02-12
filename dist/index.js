@@ -9,3 +9,4 @@ require("./Object");
 require("./Promise");
 require("./String");
 require("./Date");
+//# sourceMappingURL=index.js.map
