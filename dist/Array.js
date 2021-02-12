@@ -33,7 +33,8 @@ Util_1.define(Array.prototype, {
     insert: function (elem, index) {
         if (!index)
             index = this.length;
-        return this.splice(index, 0, elem);
+        this.splice(index, 0, elem);
+        return this;
     },
     flat: function (depth) {
         if (depth === void 0) { depth = 1; }

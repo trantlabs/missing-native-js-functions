@@ -10,7 +10,7 @@ declare global {
         random(): T | undefined;
         unique(): T[];
         shuffle(): T[];
-        insert(elem: T, index: number): T[];
+        insert(elem: T, index: number): this;
         count(search: RegExp | any): number;
         similarities(arr: T[]): T[];
         missing(arr: T[]): T[];

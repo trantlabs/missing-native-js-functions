@@ -11,7 +11,8 @@ define(Array.prototype, {
 	},
 	insert: function <T>(elem: T, index: number) {
 		if (!index) index = this.length;
-		return this.splice(index, 0, elem);
+		this.splice(index, 0, elem);
+		return this;
 	},
 	flat: function (depth: number = 1) {
 		return this.reduce(
@@ -111,7 +112,7 @@ declare global {
 		random(): T | undefined;
 		unique(): T[];
 		shuffle(): T[];
-		insert(elem: T, index: number): T[];
+		insert(elem: T, index: number): this;
 		count(search: RegExp | any): number;
 		similarities(arr: T[]): T[];
 		missing(arr: T[]): T[];
