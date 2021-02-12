@@ -6,3 +6,4 @@ import "./Number";
 import "./Object";
 import "./Promise";
 import "./String";
+import "./Date";
