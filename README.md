@@ -1,8 +1,15 @@
-# missing-native-JS-functions
+<h1>
+	Missing Native
+	<img width="24" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png">
+	Functions
+</h1>
 
 mnJSf that should be the base lib for every JS project whether for browser or nodejs
 
 This library extends the properties of `Array`, `Object`, `Promise`, `Global`, `Math`, `Number` and `String`
+
+## [Docs](https://flam3rboy.github.io/missing-native-JS-functions/)
+credit goes to ~[xnacly](http://github.com/xnacly/)
 
 ## Installation
 
@@ -30,6 +37,7 @@ use in Browser
 ```html
 <script src="https://cdn.jsdelivr.net/npm/missing-native-js-functions/dist/mnjsf.min.js"></script>
 ```
+
 
 ## [Reference](/dist/index.d.ts)
 

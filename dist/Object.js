@@ -88,3 +88,4 @@ function isObject(item) {
     var _a;
     return item && typeof item === "object" && !Array.isArray(item) && ((_a = item === null || item === void 0 ? void 0 : item.constructor) === null || _a === void 0 ? void 0 : _a.name) === "Object";
 }
+//# sourceMappingURL=Object.js.map

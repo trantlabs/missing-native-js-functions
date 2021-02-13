@@ -43,3 +43,4 @@ if (!Global.setIntervalNow) {
         return setInterval(func, milliseconds);
     };
 }
+//# sourceMappingURL=Global.js.map

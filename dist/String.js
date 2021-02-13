@@ -104,3 +104,4 @@ Util_1.define(String.prototype, {
 function escapeRegExp(str) {
     return str.replace(/[.*+\-?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
 }
+//# sourceMappingURL=String.js.map
