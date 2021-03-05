@@ -26,6 +26,10 @@
 		"mnJSf"
 	],
 	"author": "Flam3rboy",
+	"contributors": [
+		"xNaCly",
+		"einsyntax"
+	],
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/Flam3rboy/missing-native-JS-functions/issues"

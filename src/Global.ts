@@ -15,6 +15,7 @@ if (!Global.setIntervalNow) {
 		return setInterval(func, milliseconds);
 	};
 }
+if (!Global.sleep) Global.sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
 declare global {
 	/**
@@ -29,5 +30,7 @@ declare global {
 	function btoa(data: string): string;
 
 	function setIntervalNow(callback: Function, milliseconds?: number, ...args: any[]): number | NodeJS.Timeout;
+
+	function sleep(ms: number): Promise<void>;
 }
 export {};
