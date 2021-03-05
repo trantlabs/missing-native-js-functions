@@ -9,3 +9,4 @@ Util_1.define(Math, {
         return Math.round(Math.randomBetween(min, max));
     },
 });
+//# sourceMappingURL=Math.js.map

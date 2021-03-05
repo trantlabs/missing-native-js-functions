@@ -7,3 +7,4 @@ Util_1.define(Promise.prototype, {
         return this;
     },
 });
+//# sourceMappingURL=Promise.js.map

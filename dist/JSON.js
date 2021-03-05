@@ -19,3 +19,4 @@ var stringify = JSON.stringify;
 JSON.stringify = function (value, replacer, space) {
     return stringify(value, getCircularReplacer(replacer), space);
 };
+//# sourceMappingURL=JSON.js.map
