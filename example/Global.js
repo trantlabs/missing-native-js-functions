@@ -18,3 +18,9 @@ const interval = setIntervalNow(() => {
 setTimeout(() => {
 	clearInterval(interval);
 }, 1500);
+
+const timeStart = Date.now();
+sleep(2000).then((x) => {
+	const timeEnd = Date.now();
+	console.log(timeEnd - timeStart);
+});

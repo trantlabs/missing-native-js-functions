@@ -43,3 +43,5 @@ if (!Global.setIntervalNow) {
         return setInterval(func, milliseconds);
     };
 }
+if (!Global.sleep)
+    Global.sleep = function (ms) { return new Promise(function (res) { return setTimeout(res, ms); }); };
