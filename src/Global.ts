@@ -1,21 +1,13 @@
-// @ts-ignore
-let Global: globalThis;
-try {
-	Global = window;
-} catch (error) {
-	Global = global;
-}
-
-if (!Global.atob) Global.atob = (data: string) => Buffer.from(data, "base64").toString("utf8");
-if (!Global.btoa) Global.btoa = (data: string) => Buffer.from(data.toString(), "utf8").toString("base64");
-if (!Global.setIntervalNow) {
-	Global.setIntervalNow = function (callback: Function, milliseconds?: number, ...args: any[]) {
+if (!globalThis.atob) globalThis.atob = (data: string) => Buffer.from(data, "base64").toString("utf8");
+if (!globalThis.btoa) globalThis.btoa = (data: string) => Buffer.from(data.toString(), "utf8").toString("base64");
+if (!globalThis.setIntervalNow) {
+	globalThis.setIntervalNow = function (callback: Function, milliseconds?: number, ...args: any[]) {
 		const func = callback.bind(this, ...args);
 		func();
 		return setInterval(func, milliseconds);
 	};
 }
-if (!Global.sleep) Global.sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
+if (!globalThis.sleep) globalThis.sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
 declare global {
 	/**

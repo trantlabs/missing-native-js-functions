@@ -49,6 +49,7 @@ define(String.prototype, {
 		return (2.0 * intersectionSize) / (first.length + second.length - 2);
 	},
 	join: function (iterate: string[]) {
+		if (typeof iterate === "string") return iterate;
 		return iterate.join(this);
 	},
 	partition: function (seperator: string) {

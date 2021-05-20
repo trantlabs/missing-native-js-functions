@@ -21,20 +21,12 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     return to;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// @ts-ignore
-var Global;
-try {
-    Global = window;
-}
-catch (error) {
-    Global = global;
-}
-if (!Global.atob)
-    Global.atob = function (data) { return Buffer.from(data, "base64").toString("utf8"); };
-if (!Global.btoa)
-    Global.btoa = function (data) { return Buffer.from(data.toString(), "utf8").toString("base64"); };
-if (!Global.setIntervalNow) {
-    Global.setIntervalNow = function (callback, milliseconds) {
+if (!globalThis.atob)
+    globalThis.atob = function (data) { return Buffer.from(data, "base64").toString("utf8"); };
+if (!globalThis.btoa)
+    globalThis.btoa = function (data) { return Buffer.from(data.toString(), "utf8").toString("base64"); };
+if (!globalThis.setIntervalNow) {
+    globalThis.setIntervalNow = function (callback, milliseconds) {
         var args = [];
         for (var _i = 2; _i < arguments.length; _i++) {
             args[_i - 2] = arguments[_i];
@@ -44,6 +36,6 @@ if (!Global.setIntervalNow) {
         return setInterval(func, milliseconds);
     };
 }
-if (!Global.sleep)
-    Global.sleep = function (ms) { return new Promise(function (res) { return setTimeout(res, ms); }); };
+if (!globalThis.sleep)
+    globalThis.sleep = function (ms) { return new Promise(function (res) { return setTimeout(res, ms); }); };
 //# sourceMappingURL=Global.js.map
