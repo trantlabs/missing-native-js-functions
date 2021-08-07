@@ -23,7 +23,9 @@
 		"ecma",
 		"ecma-utils",
 		"ecma-extension",
-		"mnJSf"
+		"mnJSf",
+		"lodash",
+		"underscore"
 	],
 	"author": "Flam3rboy",
 	"contributors": [
