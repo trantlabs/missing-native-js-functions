@@ -12,6 +12,7 @@ declare global {
         swapcase(): string;
         title(): string;
         toObject(): object;
+        toBoolean(): boolean;
     }
 }
 export {};
