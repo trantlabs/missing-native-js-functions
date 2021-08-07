@@ -40,7 +40,7 @@ function decycle(object, replacer, space) {
 
 		// If a replacer function was provided, then call it to get a replacement value.
 
-		if (replacer !== undefined) {
+		if (typeof replacer === "function") {
 			value = replacer(value);
 		}
 

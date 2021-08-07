@@ -26,7 +26,7 @@ function decycle(object, replacer, space) {
         var old_path; // The path of an earlier occurance of value
         var nu; // The new object or array
         // If a replacer function was provided, then call it to get a replacement value.
-        if (replacer !== undefined) {
+        if (typeof replacer === "function") {
             value = replacer(value);
         }
         // typeof null === "object", so go on if this value is really an object but not

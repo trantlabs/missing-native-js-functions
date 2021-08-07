@@ -91,6 +91,21 @@ define(String.prototype, {
 	toObject: function () {
 		return JSON.parse(this);
 	},
+	toBoolean: function () {
+		switch (this.toLowerCase().trim()) {
+			case "true":
+			case "yes":
+			case "1":
+				return true;
+			case "false":
+			case "no":
+			case "0":
+			case null:
+				return false;
+			default:
+				return Boolean(this);
+		}
+	},
 });
 
 // copied from https://github.com/aceakash/string-similarity/blob/master/src/index.js
