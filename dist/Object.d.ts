@@ -4,7 +4,6 @@ declare global {
         map(callback: (element: any, index?: string) => any): this;
         equals(other: any): boolean;
         keys(): string[];
-        values(): any[];
         entries(): Array<[string, any]>;
         merge(obj: any): any;
         stringify(): string;

@@ -9,6 +9,7 @@ mnJSf that should be the base lib for every JS project whether for browser or no
 This library extends the properties of `Array`, `Object`, `Promise`, `Global`, `Math`, `Number` and `String`
 
 ## [Docs](https://flam3rboy.github.io/missing-native-JS-functions/)
+
 credit goes to ~[xnacly](http://github.com/xnacly/)
 
 ## Installation
@@ -37,7 +38,6 @@ use in Browser
 ```html
 <script src="https://cdn.jsdelivr.net/npm/missing-native-js-functions/dist/mnjsf.min.js"></script>
 ```
-
 
 ## [Reference](/dist/index.d.ts)
 
@@ -69,7 +69,6 @@ Object {
 	static equals(x: any, y: any): boolean;
 	equals(other: any): boolean; // checks if this Objects is the same with the other, WARNING this won't work with circular objects
 	keys(): string[]; //returns keys of object itself
-	values(): any[]; // returns values of object itself
 	entries():  Array<[string, any]>; // returns a nested array of key and corresponding value of object itself
 	merge(obj: any): any; // returns a new object deeply merged with obj, the current will overwrite obj, if obj has the same property. Notice will not merge classes
 	stringify(): string; // parses the object to an string (trows errors if invalid input)
@@ -219,9 +218,6 @@ obj.forEach(console.log);
 console.log(obj.keys());
 // -> ["test","tester"]
 
-console.log(obj.values());
-// -> [1,2]
-
 console.log(obj.entries());
 // -> [[test,1],[tester,2]]
 
@@ -297,6 +293,7 @@ console.log(`Floating point number ${x} to int: `, x.toInt());
 ```
 
 ### Math
+
 ```js
 console.log("Random number between 1-10", Math.randomBetween(1, 10));
 // -> 8.54098

@@ -43,9 +43,6 @@ Util_1.define(Object.prototype, {
     keys: function () {
         return Object.keys(this);
     },
-    values: function () {
-        return Object.values(this);
-    },
     entries: function () {
         return Object.entries(this);
     },

@@ -25,9 +25,6 @@ console.log("should be equal", { username: "mnjsf", age: 1, size: "5kb", minifie
 console.log("keys", obj.keys());
 // -> [ 'username', 'age', 'size', 'minified' ]
 
-console.log("values", obj.values());
-// -> [ 'mnjsf', 1, '5kb', true ]
-
 console.log("entries", obj.entries());
 // -> [[ 'username', 'mnjsf' ],[ 'age', 1 ],[ 'size', '5kb' ],[ 'minified', true ]]
 

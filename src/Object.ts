@@ -20,9 +20,6 @@ define(Object.prototype, {
 	keys: function (): any[] {
 		return Object.keys(this);
 	},
-	values: function (): any[] {
-		return Object.values(this);
-	},
 	entries: function (): any[] {
 		return Object.entries(this);
 	},
@@ -69,7 +66,6 @@ declare global {
 		map(callback: (element: any, index?: string) => any): this;
 		equals(other: any): boolean;
 		keys(): string[];
-		values(): any[];
 		entries(): Array<[string, any]>;
 		merge(obj: any): any;
 		stringify(): string;
