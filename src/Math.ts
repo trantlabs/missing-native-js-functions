@@ -11,9 +11,7 @@ define(Math, {
 
 declare global {
 	interface Math {
-		// @ts-ignore
-		static randomBetween(min: number, max: number): number;
-		// @ts-ignore
-		static randomIntBetween(min: number, max: number): number;
+		randomBetween(min: number, max: number): number;
+		randomIntBetween(min: number, max: number): number;
 	}
 }
