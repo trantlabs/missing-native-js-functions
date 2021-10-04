@@ -66,8 +66,6 @@ Array {
 Object {
 	forEach(callback: (element: any, index?: string) => any): void; // callback is called for every element in object
 	map(callback: (element: any, index?: string) => any): this; // callback is called for every element in object and the result is returned as a new object
-	static equals(x: any, y: any): boolean;
-	equals(other: any): boolean; // checks if this Objects is the same with the other, WARNING this won't work with circular objects
 	keys(): string[]; //returns keys of object itself
 	entries():  Array<[string, any]>; // returns a nested array of key and corresponding value of object itself
 	merge(obj: any): any; // returns a new object deeply merged with obj, the current will overwrite obj, if obj has the same property. Notice will not merge classes
@@ -207,9 +205,6 @@ let compareObj = {
 	test: 2,
 	tester: 4,
 };
-
-console.log(obj.equals(compareObj));
-// -> true
 
 obj.forEach(console.log);
 // -> 2 test

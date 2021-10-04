@@ -15,14 +15,18 @@ var __read = (this && this.__read) || function (o, n) {
     }
     return ar;
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Util_1 = require("./Util");
-Util_1.define(Object.prototype, {
+(0, Util_1.define)(Object.prototype, {
     forEach: function (callback) {
         var _this = this;
         // @ts-ignore
@@ -37,9 +41,6 @@ Util_1.define(Object.prototype, {
         });
         return obj;
     },
-    equals: function (other) {
-        return JSON.stringify(this) === JSON.stringify(other);
-    },
     keys: function () {
         return Object.keys(this);
     },
@@ -52,11 +53,6 @@ Util_1.define(Object.prototype, {
     },
     stringify: function () {
         return JSON.stringify(this);
-    },
-});
-Util_1.define(Object, {
-    equals: function (x, y) {
-        return x.equals(y);
     },
 });
 function mergeDeep(target) {
@@ -80,7 +76,7 @@ function mergeDeep(target) {
             }
         }
     }
-    return mergeDeep.apply(void 0, __spreadArray([target], __read(sources)));
+    return mergeDeep.apply(void 0, __spreadArray([target], __read(sources), false));
 }
 function isObject(item) {
     var _a;

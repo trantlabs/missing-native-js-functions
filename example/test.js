@@ -13,19 +13,16 @@ let compareObj = {
 	tester: 4,
 };
 
-console.log(obj.equals(compareObj));
-// -> true
-
 obj.forEach(console.log);
 
 const arr = [
-		[0, 1],
-		[2, 3],
-		[2, 3],
-		[2, 3],
-		[4, 5],
-		[6, 7],
-	]
+	[0, 1],
+	[2, 3],
+	[2, 3],
+	[2, 3],
+	[4, 5],
+	[6, 7],
+]
 	.flat()
 	.unique()
 	.shuffle();
@@ -44,7 +41,7 @@ const str2 = str1.replaceAll(",", "-");
 
 console.log({
 	str1,
-	str2
+	str2,
 });
 // -> {str1: 'test,hello,1234', str2: 'test-hello-1234'}
 
@@ -58,5 +55,5 @@ console.log(string3.equalsIgnoreCase("string"));
 
 //COUNT STRING EXAMPLE
 const string4 = "This is my House, my House is very cool! And this House is small!";
-console.log(string4.count("House"))
+console.log(string4.count("House"));
 // -> 3

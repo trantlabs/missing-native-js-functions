@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Util_1 = require("./Util");
-Util_1.define(String.prototype, {
+(0, Util_1.define)(String.prototype, {
     capitalize: function () {
         return this.slice(0, 1).toUpperCase() + this.slice(1);
     },

@@ -15,14 +15,18 @@ var __read = (this && this.__read) || function (o, n) {
     }
     return ar;
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Util_1 = require("./Util");
-Util_1.define(Array.prototype, {
+(0, Util_1.define)(Array.prototype, {
     remove: function (elem) {
         // do not use filter to modify current array
         var index = this.indexOf(elem);
@@ -50,7 +54,7 @@ Util_1.define(Array.prototype, {
         return this[0];
     },
     unique: function () {
-        return __spreadArray([], __read(new Set(this)));
+        return __spreadArray([], __read(new Set(this)), false);
     },
     random: function () {
         return this[Math.floor(Math.random() * this.length)];

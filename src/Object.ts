@@ -14,9 +14,6 @@ define(Object.prototype, {
 		});
 		return obj;
 	},
-	equals: function (other: any): boolean {
-		return JSON.stringify(this) === JSON.stringify(other);
-	},
 	keys: function (): any[] {
 		return Object.keys(this);
 	},
@@ -29,12 +26,6 @@ define(Object.prototype, {
 	},
 	stringify: function () {
 		return JSON.stringify(this);
-	},
-});
-
-define(Object, {
-	equals: function (x: any, y: any) {
-		return x.equals(y);
 	},
 });
 
@@ -64,15 +55,12 @@ declare global {
 	interface Object {
 		forEach(callback: (element: any, index?: string) => any): void;
 		map(callback: (element: any, index?: string) => any): this;
-		equals(other: any): boolean;
 		keys(): string[];
 		entries(): Array<[string, any]>;
 		merge(obj: any): any;
 		stringify(): string;
 	}
 
-	interface ObjectConstructor {
-		equals(x: any, y: any): boolean;
-	}
+	interface ObjectConstructor {}
 }
 export {};

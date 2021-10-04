@@ -16,12 +16,6 @@ let compareObj = {
 	tester: 4,
 };
 
-console.log("shouldn't be equal", obj.equals({ test: "not equals" }));
-// -> false
-
-console.log("should be equal", { username: "mnjsf", age: 1, size: "5kb", minified: true }.equals(obj));
-// -> true
-
 console.log("keys", obj.keys());
 // -> [ 'username', 'age', 'size', 'minified' ]
 
