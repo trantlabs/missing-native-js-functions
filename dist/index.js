@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 require("./Array");
 require("./Global");
-require("./JSON");
 require("./Math");
 require("./Number");
 require("./Object");
