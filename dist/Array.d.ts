@@ -8,7 +8,7 @@ declare global {
         findLast(predicate: (value: T, index: number, obj: T[]) => any | undefined): T | undefined;
         findMap(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined;
         random(): T | undefined;
-        unique(): T[];
+        unique(predicate?: (value: T, index: number, obj: T[]) => any | undefined): T[];
         shuffle(): T[];
         insert(elem: T, index: number): this;
         count(search: RegExp | any): number;

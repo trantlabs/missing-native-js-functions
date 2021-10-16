@@ -43,9 +43,7 @@ var Util_1 = require("./Util");
     },
     flat: function (depth) {
         if (depth === void 0) { depth = 1; }
-        return this.reduce(function (acc, val) {
-            return (Array.isArray(val) && depth >= 1) || depth === -1 ? acc.concat(val.flat(depth--)) : acc.concat(val);
-        }, []);
+        return this.reduce(function (acc, val) { return ((Array.isArray(val) && depth >= 1) || depth === -1 ? acc.concat(val.flat(depth--)) : acc.concat(val)); }, []);
     },
     last: function () {
         return this[this.length - 1];
@@ -53,7 +51,10 @@ var Util_1 = require("./Util");
     first: function () {
         return this[0];
     },
-    unique: function () {
+    unique: function (predicate) {
+        if (predicate) {
+            return __spreadArray([], __read(new Map(this.map(function (item, index, obj) { return [predicate(item, index, obj), item]; })).values()), false);
+        }
         return __spreadArray([], __read(new Set(this)), false);
     },
     random: function () {

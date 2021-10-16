@@ -16,8 +16,7 @@ define(Array.prototype, {
 	},
 	flat: function (depth: number = 1) {
 		return this.reduce(
-			(acc: any, val: any) =>
-				(Array.isArray(val) && depth >= 1) || depth === -1 ? acc.concat(val.flat(depth--)) : acc.concat(val),
+			(acc: any, val: any) => ((Array.isArray(val) && depth >= 1) || depth === -1 ? acc.concat(val.flat(depth--)) : acc.concat(val)),
 			[]
 		);
 	},
@@ -27,7 +26,10 @@ define(Array.prototype, {
 	first: function () {
 		return this[0];
 	},
-	unique: function () {
+	unique: function <T>(predicate?: (value: T, index: number, obj: T[]) => any) {
+		if (predicate) {
+			return [...new Map(this.map((item: T, index: number, obj: T[]) => [predicate(item, index, obj), item])).values()];
+		}
 		return [...new Set(this)];
 	},
 	random: function () {
@@ -110,7 +112,7 @@ declare global {
 		findLast(predicate: (value: T, index: number, obj: T[]) => any | undefined): T | undefined;
 		findMap(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined;
 		random(): T | undefined;
-		unique(): T[];
+		unique(predicate?: (value: T, index: number, obj: T[]) => any | undefined): T[];
 		shuffle(): T[];
 		insert(elem: T, index: number): this;
 		count(search: RegExp | any): number;
