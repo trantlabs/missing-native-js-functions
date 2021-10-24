@@ -14,7 +14,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Flam3rboy/missing-native-JS-functions.git"
+		"url": "git+https://github.com/Flam3rboy/missing-native-js-functions.git"
 	},
 	"keywords": [
 		"js",
@@ -34,9 +34,9 @@
 	],
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/Flam3rboy/missing-native-JS-functions/issues"
+		"url": "https://github.com/Flam3rboy/missing-native-js-functions/issues"
 	},
-	"homepage": "https://flam3rboy.github.io/missing-native-JS-functions/",
+	"homepage": "https://flam3rboy.github.io/missing-native-js-functions/",
 	"devDependencies": {
 		"@types/node": "^14.14.14",
 		"rollup": "^2.36.1",
