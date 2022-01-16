@@ -8,7 +8,7 @@ mnJSf that should be the base lib for every JS project whether for browser or no
 
 This library extends the properties of `Array`, `Object`, `Promise`, `Global`, `Math`, `Number` and `String`
 
-## [Docs](https://flam3rboy.github.io/missing-native-JS-functions/)
+## [Docs](https://flam3rboy.github.io/missing-native-js-functions/)
 
 credit goes to ~[xnacly](http://github.com/xnacly/)
 
