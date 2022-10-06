@@ -7,10 +7,10 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"test": "node example/",
-		"start": "npm run build && npm run test",
+		"start": "yarn build && yarn test",
 		"build": "tsc -b .",
 		"rollup": "rollup -c",
-		"prepublish": "npm run build && npm run rollup && git add . && git commit -m build"
+		"prepublish": "yarn build && yarn rollup && git add . && git commit -m build"
 	},
 	"repository": {
 		"type": "git",
@@ -30,7 +30,7 @@
 	"author": "Flam3rboy",
 	"contributors": [
 		"xNaCly",
-		"einsyntax"
+		"intevel"
 	],
 	"license": "ISC",
 	"bugs": {
