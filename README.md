@@ -105,6 +105,7 @@ Promise {
 Global {
     function atob(data: string): string; // Converts a Base64 encoded string back to UTF-8
     function btoa(data: string): string; // Converts a UTF-8 string to a Base64 encoded string
+    function sleep(milliseconds: number): Promise<void>; // Returns a promise that resolves after the specified milliseconds
 }
 ```
 
