@@ -1,16 +1,25 @@
-<h1>
-	Missing Native
-	<img width="24" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png">
-	Functions
-</h1>
 
-mnJSf that should be the base lib for every JS project whether for browser or nodejs
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+
+<h1 align="center">Missing Native
+	<img width="24" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png">
+	Functions</h1>
+<p align="center">A Zero-Dependecy JavaScript utility library delivering <b>missing</b> native functions 💼</p>
+
+## Why using mnjsf?
+
+mnjsf delivers some functions which are missing in JavaScript
+
+❯ 💼 **Zero-Dependency**  Built without a dependency hell<br>
+❯ 📐 **Lightweight** 2.5KB<br>
+❯ 🌐 **Browser Support** use mnjsf in an browser or Node.js application <br>
+❯ ✨ **No function calls** anymore, directly using on the prototype <br>
 
 This library extends the properties of `Array`, `Object`, `Promise`, `Global`, `Math`, `Number` and `String`
 
-## [Docs](https://flam3rboy.github.io/missing-native-js-functions/)
+## [Documentation](https://trantlabs.github.io/missing-native-js-functions/)
 
-credit goes to ~[xnacly](http://github.com/xnacly/)
 
 ## Installation
 
@@ -297,3 +306,14 @@ console.log("Random number between 1-10", Math.randomBetween(1, 10));
 console.log("Random int between 1-10", Math.randomIntBetween(1, 10));
 // -> 5
 ```
+
+## License
+
+Made with 💚 Published under [MIT](./LICENSE).
+
+<!-- Badges -->
+
+[npm-version-src]: https://flat.badgen.net/npm/v/missing-native-js-functions?style=flat-square&label=stable
+[npm-version-href]: https://npmjs.com/package/missing-native-js-functions
+[npm-downloads-src]: https://flat.badgen.net/npm/dm/missing-native-js-functions?style=flat-square&label=stable
+[npm-downloads-href]: https://npmjs.com/package/missing-native-js-functions
