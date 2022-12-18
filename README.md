@@ -5,7 +5,7 @@
 <h1 align="center">Missing Native
 	<img width="24" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png">
 	Functions</h1>
-<p align="center">A Zero-Dependecy JavaScript utility library delivering <b>missing</b> native functions 💼</p>
+<p align="center">A zero-dependecy JavaScript utility library delivering <b>missing</b> native functions 💼</p>
 
 ## Why using mnjsf?
 
@@ -13,8 +13,8 @@ mnjsf delivers some functions which are missing in JavaScript
 
 ❯ 💼 **Zero-Dependency**  Built without a dependency hell<br>
 ❯ 📐 **Lightweight** 2.5KB<br>
-❯ 🌐 **Browser Support** use mnjsf in an browser or Node.js application <br>
-❯ ✨ **No function calls** anymore, directly using on the prototype <br>
+❯ 🌐 **NodeJS/Browser Support** use mnjsf in a browser or Node.js application <br>
+❯ ✨ **Direct Call** of utility functions on variables (`[].last()`) <br>
 
 This library extends the properties of `Array`, `Object`, `Promise`, `Global`, `Math`, `Number` and `String`
 
