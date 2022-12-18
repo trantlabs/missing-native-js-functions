@@ -38,7 +38,9 @@
 	},
 	"homepage": "https://flam3rboy.github.io/missing-native-js-functions/",
 	"devDependencies": {
+		"@trantlabs/eslint-config-typescript": "^0.0.0",
 		"@types/node": "^14.14.14",
+		"eslint": "^8.30.0",
 		"rollup": "^2.36.1",
 		"rollup-plugin-babel-minify": "^10.0.0",
 		"rollup-plugin-commonjs": "^10.1.0",

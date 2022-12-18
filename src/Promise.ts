@@ -1,16 +1,17 @@
-import { define } from "./Util";
+import { define } from './Util'
 
 define(Promise.prototype, {
-	caught: function () {
-		this.catch(console.error);
-		return this;
-	},
-});
+  caught: function () {
+    this.catch(console.error)
+    return this
+  }
+})
 
 declare global {
-	interface Promise<T> {
-		caught(): this;
-	}
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface Promise<T> {
+    caught(): this;
+  }
 }
 
-export {};
+export {}
