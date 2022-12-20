@@ -50,7 +50,7 @@ declare global {
     ): number | NodeJS.Timeout;
 
     /**
-    * Blocks the execution of the following statements after calling sleep for the given milliseconds 
+    * Returns a promise that resolves after the specified milliseconds
     * @param {ms} ms The time, in milliseconds (thousandths of a second), the function should delay the execution of the program.
     */
     function sleep(ms: number): Promise<void>;
