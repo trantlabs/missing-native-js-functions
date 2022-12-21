@@ -21,6 +21,8 @@ declare global {
 	interface DateConstructor {
 		/**
 		 * Returns the current timestamp as its representation in seconds
+		 * @example
+		 * Date.nowSeconds() //
 		 */
 		nowSeconds(): number;
 		/**
