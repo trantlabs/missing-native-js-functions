@@ -115,18 +115,110 @@ function escapeRegExp(str: string) {
 }
 declare global {
 	interface String {
+		/**
+		 * Returns a new string with the first character capitalized
+		 * @example
+		 * "capitalize this string".capitalize(); // returns: "Capitalize this string"
+		 */
 		capitalize(): string;
+		/**
+		 * Replace all occurrences of find in the string with replace
+		 * @example
+		 * "i iii iiiii".replaceAll("i", "I"); // returns: I III IIIII
+		 */
 		replaceAll(search: string, replace: string): string;
+		/**
+		 * Returns a value between 0 (different) and 1 (same) indicating how similar the string is to compare
+		 * @example
+		 * "this is a test".similarity("this is a test"); // returns: 1
+		 * "this string is very similiar".similarity("this string should be very smiliar"); // returns: 1.3411764705882347
+		 * "this string is not similiar".similarity(""); // returns: 0
+		 */
 		similarity(compare: string): number;
+		/**
+		 * Returns the array values separated by the string
+		 * @example
+		 * " ".join(["git", "commit", "-m", "feat(util): updated context"]); // returns: git commit -m "feat(util): updated context"
+		 * ",".join(["comma", "separated", "value"]); // returns: comma,separated,value
+		 */
 		join(iterate: string[]): string;
+		/**
+		 * Returns split array, but includes separators
+		 * @example
+		 * "2022-12-21".partition("-"); // returns: ["2022", "-", "12", "-", "21"]
+		 */
 		partition(separator: string): string[];
+		/**
+		 * Converts the given string to a number, if parsing fails returns Nan
+		 * @example
+		 * "512".toNumber(); // returns: 512
+		 * "5.12".toNumber(); // returns: 5.12
+		 * "5..12".toNumber(); // returns: Nan
+		 */
 		toNumber(): number;
+		/**
+		 * Converts string to BigInt, if parsing fails returns NaN
+		 * @example
+		 * "this is 3948653498563498563489563234986n as a bigint".toBigInt(); // returns: 3948653498563498563489563234986n
+		 * "this is NaN".toBigInt(); // returns: Nan
+		 */
 		toBigInt(): bigint;
+		/**
+		 * Compares given string to compareString, ignores cases
+         * @example
+         * "TEST".equalsIgnoreCase("test") // returns: true
+         * "teST".equalsIgnoreCase("test") // returns: true
+         * "".equalsIgnoreCase("test") // returns: false
+		 */
 		equalsIgnoreCase(compareString: string): boolean;
+		/**
+		 * Returns total of found items for specified search
+         * @example
+         * "test test test example example".count("test") // returns: 3
+         * "example example".count("test") // returns: 0
+		 */
 		count(countString: RegExp | any): number;
+		/**
+         * Swaps the case for all chars in the string
+         * @example
+         * "This Should Be Case Swapped".swapcase() // returns: tHIS sHOULD bE cASE sWAPPED
+         * "test".swapcase() // returns: TEST
+         * "TEST".swapcase() // returns: test
+		 */
 		swapcase(): string;
+		/**
+		 * Returns a new string in which every first character of a word is capizalized
+		 * @example
+		 * "convert this string to title case".title(); // returns: "Convert This String To Title Case"
+		 */
 		title(): string;
+		/**
+		 * Parses the string to an object, uses JSON.parse() under the hood.
+         * @example
+         * '{"user": "name"}'.toObject(); // returns {user: "name"}
+         * "{\"user\": \"name\"}".toObject(); // returns {user: "name"}
+         * "{'user': 'name'}".toObject(); // throws error
+         * "test".toObject(); // throws error
+		 */
 		toObject(): object;
+		/**
+		 * Converts the string to a boolean
+         * true:
+         *  - "yes"
+         *  - "1"
+         *  - "true"
+         * false:
+         *  - "no"
+         *  - "0"
+         *  - "false"
+         * @example
+         * "yes".toBoolean() // returns true
+         * "1".toBoolean() // returns true
+         * "true".toBoolean() // returns true
+         * "no".toBoolean() // returns false
+         * "0".toBoolean() // returns false
+         * "false".toBoolean() // returns false
+		 */
 		toBoolean(): boolean;
 	}
 }
