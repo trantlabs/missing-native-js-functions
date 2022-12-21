@@ -28,7 +28,7 @@ declare global {
 		/**
 		 * specifies the timezone for the current date
 		 */
-		setTimezone(): Date;
+		setTimezone(timezone: string): Date;
 		/**
 		 * checks if the date is in the past, compares with current date
 		 */
