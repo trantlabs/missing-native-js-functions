@@ -6,7 +6,7 @@ define(Date.prototype, {
 	setTimezone: function (timezone: string) {
 		return new Date(
 			this.toLocaleString("en-US", {
-				timezone,
+				timeZone: timezone,
 			})
 		);
 	},
@@ -33,8 +33,8 @@ declare global {
 		 *
 		 * @example
 		 * let date = new Date()
-		 * date.setTimezone("Europe/Berlin") // returns 2022-12-21T11:29:27.000Z
-		 * date.setTimezone("America/Jamaica") // returns 2022-12-21T11:29:27.000Z
+		 * date.setTimezone("Europe/Berlin") // returns 2022-12-21T12:22:18.000Z
+		 * date.setTimezone("America/Jamaica") // returns 2022-12-21T06:22:18.000Z
 		 */
 		setTimezone(timezone: string): Date;
 		/**
