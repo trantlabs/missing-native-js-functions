@@ -117,18 +117,22 @@ declare global {
 	interface String {
 		/**
 		 * Returns a new string with the first character capitalized
+		 * @returns {string} modified string
 		 * @example
 		 * "capitalize this string".capitalize(); // returns: "Capitalize this string"
 		 */
 		capitalize(): string;
 		/**
 		 * Replace all occurrences of find in the string with replace
+		 * @returns {string} modified string
 		 * @example
 		 * "i iii iiiii".replaceAll("i", "I"); // returns: I III IIIII
 		 */
 		replaceAll(search: string, replace: string): string;
 		/**
 		 * Returns a value between 0 (different) and 1 (same) indicating how similar the string is to compare
+		 * @returns {number} 0 =< x =< 1
+		 * @param {string} compare string to compare the original to
 		 * @example
 		 * "this is a test".similarity("this is a test"); // returns: 1
 		 * "this string is very similiar".similarity("this string should be very smiliar"); // returns: 1.3411764705882347
@@ -136,7 +140,9 @@ declare global {
 		 */
 		similarity(compare: string): number;
 		/**
-		 * Returns the array values separated by the string
+		 * Returns the array values separated by the original string
+		 * @param {string[]} iterate array to join together separated the original string
+		 * @returns {string} joined string
 		 * @example
 		 * " ".join(["git", "commit", "-m", "feat(util): updated context"]); // returns: git commit -m "feat(util): updated context"
 		 * ",".join(["comma", "separated", "value"]); // returns: comma,separated,value
@@ -144,12 +150,15 @@ declare global {
 		join(iterate: string[]): string;
 		/**
 		 * Returns split array, but includes separators
+		 * @param {string} separator
+		 * @returns {string[]} split array, including separator
 		 * @example
 		 * "2022-12-21".partition("-"); // returns: ["2022", "-", "12", "-", "21"]
 		 */
 		partition(separator: string): string[];
 		/**
 		 * Converts the given string to a number, if parsing fails returns Nan
+		 * @returns {number} parsed number
 		 * @example
 		 * "512".toNumber(); // returns: 512
 		 * "5.12".toNumber(); // returns: 5.12
@@ -158,6 +167,7 @@ declare global {
 		toNumber(): number;
 		/**
 		 * Converts string to BigInt, if parsing fails returns NaN
+		 * @returns {bigint} parsed bigint
 		 * @example
 		 * "this is 3948653498563498563489563234986n as a bigint".toBigInt(); // returns: 3948653498563498563489563234986n
 		 * "this is NaN".toBigInt(); // returns: Nan
@@ -165,59 +175,67 @@ declare global {
 		toBigInt(): bigint;
 		/**
 		 * Compares given string to compareString, ignores cases
-         * @example
-         * "TEST".equalsIgnoreCase("test") // returns: true
-         * "teST".equalsIgnoreCase("test") // returns: true
-         * "".equalsIgnoreCase("test") // returns: false
+		 * @param {string} compareString string to compare the original against
+		 * @return {boolean}
+		 * @example
+		 * "TEST".equalsIgnoreCase("test") // returns: true
+		 * "teST".equalsIgnoreCase("test") // returns: true
+		 * "".equalsIgnoreCase("test") // returns: false
 		 */
 		equalsIgnoreCase(compareString: string): boolean;
 		/**
 		 * Returns total of found items for specified search
-         * @example
-         * "test test test example example".count("test") // returns: 3
-         * "example example".count("test") // returns: 0
+		 * @param {RegExp | string} countString element to be counted
+		 * @returns {number} amount of found matching elements
+		 * @example
+		 * "test test test example example".count("test") // returns: 3
+		 * "example example".count("test") // returns: 0
 		 */
 		count(countString: RegExp | any): number;
 		/**
-         * Swaps the case for all chars in the string
-         * @example
-         * "This Should Be Case Swapped".swapcase() // returns: tHIS sHOULD bE cASE sWAPPED
-         * "test".swapcase() // returns: TEST
-         * "TEST".swapcase() // returns: test
+		 * Swaps the case for all chars in the string
+		 * @returns {string} string with swapped cases
+		 * @example
+		 * "This Should Be Case Swapped".swapcase() // returns: tHIS sHOULD bE cASE sWAPPED
+		 * "test".swapcase() // returns: TEST
+		 * "TEST".swapcase() // returns: test
 		 */
 		swapcase(): string;
 		/**
 		 * Returns a new string in which every first character of a word is capizalized
+		 * @returns {string} string in titlecase format
 		 * @example
 		 * "convert this string to title case".title(); // returns: "Convert This String To Title Case"
 		 */
 		title(): string;
 		/**
 		 * Parses the string to an object, uses JSON.parse() under the hood.
-         * @example
-         * '{"user": "name"}'.toObject(); // returns {user: "name"}
-         * "{\"user\": \"name\"}".toObject(); // returns {user: "name"}
-         * "{'user': 'name'}".toObject(); // throws error
-         * "test".toObject(); // throws error
+		 * @returns {object} parsed JSON
+		 * @example
+		 * '{"user": "name"}'.toObject(); // returns {user: "name"}
+		 * "{\"user\": \"name\"}".toObject(); // returns {user: "name"}
+		 * "{'user': 'name'}".toObject(); // throws error
+		 * "test".toObject(); // throws error
 		 */
 		toObject(): object;
 		/**
 		 * Converts the string to a boolean
-         * true:
-         *  - "yes"
-         *  - "1"
-         *  - "true"
-         * false:
-         *  - "no"
-         *  - "0"
-         *  - "false"
-         * @example
-         * "yes".toBoolean() // returns true
-         * "1".toBoolean() // returns true
-         * "true".toBoolean() // returns true
-         * "no".toBoolean() // returns false
-         * "0".toBoolean() // returns false
-         * "false".toBoolean() // returns false
+		 * true:
+		 *  - "yes"
+		 *  - "1"
+		 *  - "true"
+		 * false:
+		 *  - "no"
+		 *  - "0"
+		 *  - "false"
+		 * @returns {boolean} parsed boolean
+		 * @example
+		 * "yes".toBoolean() // returns true
+		 * "1".toBoolean() // returns true
+		 * "true".toBoolean() // returns true
+		 * "no".toBoolean() // returns false
+		 * "0".toBoolean() // returns false
+		 * "false".toBoolean() // returns false
 		 */
 		toBoolean(): boolean;
 	}

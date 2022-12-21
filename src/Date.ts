@@ -21,15 +21,15 @@ declare global {
 	interface DateConstructor {
 		/**
 		 * Returns the current timestamp as its representation in seconds
+         * @returns {number} date in seconds
 		 * @example
 		 * new Date().nowSeconds() // 1671621321
 		 */
 		nowSeconds(): number;
-		// TODO: this function needs a fix, I couldn't reproduce the correct results with the given example
 		/**
 		 * specifies the timezone for the current date
 		 *
-		 * available timezones: https://www.iana.org/time-zones
+         * @param {string} timezone see available timezones: https://www.iana.org/time-zones
 		 *
 		 * @example
 		 * let date = new Date()
@@ -39,6 +39,7 @@ declare global {
 		setTimezone(timezone: string): Date;
 		/**
 		 * Checks if the date is in the past
+         * @returns {boolean} is date in past
 		 * @example
 		 * new Date("2022-12-01").isInPast() // returns: true
 		 */

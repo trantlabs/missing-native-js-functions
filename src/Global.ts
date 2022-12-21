@@ -21,6 +21,7 @@ declare global {
 	/**
 	 * Converts a Base64 encoded string
 	 * @param {string} data Base64 encoded string
+     * @returns {string} decoded string
 	 * @example
 	 * atob("dGhpcyBzdHJpbmcgd2FzIGJhc2U2NCBlbmNvZGVk"); // returns: this string was base64 encoded
 	 */
@@ -28,6 +29,7 @@ declare global {
 	/**
 	 * Converts a string to a Base64 encoded string
 	 * @param {string} data UTF-8 string that should get encoded
+     * @returns {string} encoded string
 	 * @example
 	 * btoa("this string will be base64 encoded"); // returns: dGhpcyBzdHJpbmcgd2lsbCBiZSBiYXNlNjQgZW5jb2RlZA==
 	 */
@@ -38,6 +40,7 @@ declare global {
 	 * @param {callback} callback a function to be executed every delay milliseconds. The first execution happens after delay milliseconds.
 	 * @param {milliseconds} milliseconds The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
 	 * @param {args} args Additional arguments which are passed through to the function specified by func once the timer expires.
+     * @returns {number | NodeJS.Timeout}
 	 * @example
 	 * setInterval((a, b) => {
 	 *  console.log(a, b)

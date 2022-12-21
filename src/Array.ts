@@ -123,66 +123,129 @@ define(Array.prototype, {
 declare global {
 	interface Array<T> {
 		/**
-		 * Removes the given elements from the array
-		 * @param {elem} o elements to remove
-		 * @returns modified array
+		 * Removes the given elements from the array, returns modified array
+		 * @param {any} o Element
+		 * @returns {T} modified array
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.remove(1) // a = [2,3,4,5]
 		 */
 		remove(o: T): this;
 		/**
-		 * Returns a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+		 * Returns the modified array with all sub-array elements concatenated into it recursively up to the specified depth.
+		 * @param {number=} depth how deep to concatenate
+		 * @returns {T} modified array
+		 * @example
+		 * let a = [
+		 *  [0,1]
+		 *  [2,3]
+		 *  [4,5]
+		 * ];
+		 * a.flat(); // [0,1,2,3,4,5]
 		 */
 		flat(depth?: number): T;
 		/**
 		 * Returns the first element
+		 * @returns {T | undefined} first element or undefined if the array is empty
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.first() // 1
 		 */
 		first(): T | undefined;
 		/**
 		 * Returns the last element
+		 * @returns {T | undefined} last element or undefined if the array is empty
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.last() // 5
 		 */
 		last(): T | undefined;
 		/**
 		 * Returns the index of the element which passes the predicate, iterates from the right to the left
+		 * @param {} predicate / condition
+		 * @returns {number} index of last element which passed predicate
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.findLastIndex(x => x % 2 == 0); // 3 (index of last even number)
 		 */
 		findLastIndex(predicate: (value: T, index: number, obj: T[]) => any | undefined): number;
 		/**
 		 * Returns the the element which passes the predicate, iterates from the right to the left
+		 * @param {} predicate / condition
+		 * @returns {number} last element which passed predicate
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.findLast(x => x % 2 == 0); // 4 (last even number)
 		 */
 		findLast(predicate: (value: T, index: number, obj: T[]) => any | undefined): T | undefined;
-		/**
-		 * 
-		 */
+		// TODO:
+		/** */
 		findMap(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined;
 		/**
 		 * Returns a random value of the array
+		 * @returns {T | undefined} random value of array
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.random() // 2
 		 */
 		random(): T | undefined;
 		/**
 		 * Returns the unique items of the array
+		 * @param {} predicate / condition
+		 * @returns {T[]}
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.unique() // [1,2,3,4,5]
 		 */
 		unique(predicate?: (value: T, index: number, obj: T[]) => any | undefined): T[];
 		/**
-		 * Randomizes the item positions in the array
-		 * @returns modified array
+		 * Randomizes the item positions in the array, modifies original array
+		 * @returns {T[]} shuffled array
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.shuffle() // a = [2,4,5,1,3]
 		 */
 		shuffle(): T[];
 		/**
-		 * Inserts the element at the index
-		 * @param {elem} elem element to insert
-		 * @param {index} index index at which the element will be inserted
-		 * @returns modified array
+		 * Inserts the element at the index, modifies array
+		 * @param {number} index index at which the element will be inserted
+		 * @returns {T[]} array with inserted element
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.insert(27, 2) // a = [1,2,27,3,4,5]
 		 */
 		insert(elem: T, index: number): this;
 		/**
 		 * Returns total of found items for specified search
-		 * @param {search} search
+		 * @param {RegExp | any} search
+		 * @returns {number} amount of matching elements in array
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.count(Number) // 5
+		 * a.count(String) // 0
+		 * a.count(2) // 1
 		 */
 		count(search: RegExp | any): number;
 		/**
 		 * Returns a new array with elements that are both in this array and in the comparison array
+		 * Returns the intersection of the original and the comparison array
+		 * @param {T[]} arr array to compare original to
+		 * @returns {T[]} intersection
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * let b = [3,4,5,6,7];
+		 * a.similarities(b); // [3,4,5]
 		 */
 		similarities(arr: T[]): T[];
 		/**
+		 * Returns the difference between the original and the comparison array
 		 * Returns a new array with elements that are in this array, but are missing in the comparison array
+		 * @param {T[]} arr array to compare original to
+		 * @returns {T[]} difference
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * let b = [3,4,5,6,7];
+		 * a.missing(b); // [1,2]
 		 */
 		missing(arr: T[]): T[];
 	}
