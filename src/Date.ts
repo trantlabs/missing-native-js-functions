@@ -22,15 +22,25 @@ declare global {
 		/**
 		 * Returns the current timestamp as its representation in seconds
 		 * @example
-		 * Date.nowSeconds() //
+		 * new Date().nowSeconds() // 1671621321
 		 */
 		nowSeconds(): number;
+		// TODO: this function needs a fix, I couldn't reproduce the correct results with the given example
 		/**
 		 * specifies the timezone for the current date
+		 *
+		 * available timezones: https://www.iana.org/time-zones
+		 *
+		 * @example
+		 * let date = new Date()
+		 * date.setTimezone("Europe/Berlin") // returns 2022-12-21T11:29:27.000Z
+		 * date.setTimezone("America/Jamaica") // returns 2022-12-21T11:29:27.000Z
 		 */
 		setTimezone(timezone: string): Date;
 		/**
-		 * checks if the date is in the past, compares with current date
+		 * Checks if the date is in the past
+		 * @example
+		 * new Date("2022-12-01").isInPast() // returns: true
 		 */
 		isInPast(): boolean;
 	}
