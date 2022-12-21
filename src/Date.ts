@@ -28,9 +28,7 @@ declare global {
 		nowSeconds(): number;
 		/**
 		 * specifies the timezone for the current date
-		 *
          * @param {string} timezone see available timezones: https://www.iana.org/time-zones
-		 *
 		 * @example
 		 * let date = new Date()
 		 * date.setTimezone("Europe/Berlin") // returns 2022-12-21T12:22:18.000Z

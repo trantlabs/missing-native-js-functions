@@ -220,14 +220,6 @@ declare global {
 		toObject(): object;
 		/**
 		 * Converts the string to a boolean
-		 * true:
-		 *  - "yes"
-		 *  - "1"
-		 *  - "true"
-		 * false:
-		 *  - "no"
-		 *  - "0"
-		 *  - "false"
 		 * @returns {boolean} parsed boolean
 		 * @example
 		 * "yes".toBoolean() // returns true
