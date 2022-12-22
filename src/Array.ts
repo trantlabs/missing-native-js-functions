@@ -7,7 +7,7 @@ define(Array.prototype, {
 		if (index === -1) return this;
 
 		this.splice(index, 1);
-		return this; // .filter((e) => e !== elem);
+		return this;
 	},
 
 	insert: function <T>(elem: T, index: number) {

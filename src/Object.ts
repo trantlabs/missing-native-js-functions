@@ -9,7 +9,7 @@ define(Object.prototype, {
 		const obj = {};
 
 		Object.keys(this).forEach((key) => {
-			// @ts-ignore
+			// @ts-expect-error
 			obj[key] = callback(this[key], key);
 		});
 		return obj;
