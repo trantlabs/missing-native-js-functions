@@ -178,8 +178,16 @@ declare global {
 		 * a.findLast(x => x % 2 == 0); // 4 (last even number)
 		 */
 		findLast(predicate: (value: T, index: number, obj: T[]) => any | undefined): T | undefined;
-		// TODO:
-		/** */
+		/**
+		 * Searches for an Element in the given array, applies the callback function to this element and returns the result. Acts as a combination of find and map. The function returns the result of the callback for the first element matching the predicate
+		 * @param {} predicate callback function
+		 * @returns {any | undefined} result of the callback for the found element of the array
+		 * @example
+		 * let a = [1,2,3,4,5];
+		 * a.findMap(x => {
+		 *      return x == 3 ? x*25 : false;
+		 * }); // returns: 75
+		 */
 		findMap(predicate: (value: T, index: number, obj: T[]) => any | undefined): any | undefined;
 		/**
 		 * Returns a random value of the array
