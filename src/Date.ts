@@ -1,8 +1,12 @@
 import { define } from "./Util";
+
+define(Date, {
+    nowSeconds: function () {
+        return Math.floor(Date.now() / 1000);
+    },
+});
+
 define(Date.prototype, {
-	nowSeconds: function () {
-		return Math.floor(Date.now() / 1000);
-	},
 	setTimezone: function (timezone: string) {
 		return new Date(
 			this.toLocaleString("en-US", {
@@ -18,17 +22,22 @@ define(Date.prototype, {
 });
 
 declare global {
-	interface DateConstructor {
+    interface DateConstructor {
 		/**
 		 * Returns the current timestamp as its representation in seconds
-         * @returns {number} date in seconds
+		 * @returns {number} date in seconds
 		 * @example
 		 * new Date().nowSeconds() // 1671621321
 		 */
 		nowSeconds(): number;
+    }
+}
+
+declare global {
+	interface Date {
 		/**
 		 * specifies the timezone for the current date
-         * @param {string} timezone see available timezones: https://www.iana.org/time-zones
+		 * @param {string} timezone see available timezones: https://www.iana.org/time-zones
 		 * @example
 		 * let date = new Date()
 		 * date.setTimezone("Europe/Berlin") // returns 2022-12-21T12:22:18.000Z
@@ -37,7 +46,7 @@ declare global {
 		setTimezone(timezone: string): Date;
 		/**
 		 * Checks if the date is in the past
-         * @returns {boolean} is date in past
+		 * @returns {boolean} is date in past
 		 * @example
 		 * new Date("2022-12-01").isInPast() // returns: true
 		 */

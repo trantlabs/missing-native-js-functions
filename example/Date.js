@@ -1,4 +1,4 @@
 require("../dist/Date");
 
-console.log(new Date().nowSeconds());
+console.log(Date.nowSeconds());
 // -> 1613171021
