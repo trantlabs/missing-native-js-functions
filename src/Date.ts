@@ -1,9 +1,9 @@
 import { define } from "./Util";
 
 define(Date, {
-    nowSeconds: function () {
-        return Math.floor(Date.now() / 1000);
-    },
+	nowSeconds: function () {
+		return Math.floor(Date.now() / 1000);
+	},
 });
 
 define(Date.prototype, {
@@ -22,15 +22,15 @@ define(Date.prototype, {
 });
 
 declare global {
-    interface DateConstructor {
+	interface DateConstructor {
 		/**
 		 * Returns the current timestamp as its representation in seconds
 		 * @returns {number} date in seconds
 		 * @example
-		 * new Date().nowSeconds() // 1671621321
+		 * Date.nowSeconds() // 1671621321
 		 */
 		nowSeconds(): number;
-    }
+	}
 }
 
 declare global {
