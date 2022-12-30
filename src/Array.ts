@@ -16,10 +16,10 @@ define(Array.prototype, {
 		return this;
 	},
 
-	flat: function (depth: number = 1) {
+	flat: function <T>(depth: number = 1) {
 		return this.reduce(
 			(acc: any, val: any) =>
-				(Array.isArray(val) && depth >= 1) || depth === -1 ? acc.concat(val.flat(depth--)) : acc.concat(val),
+				(Array.isArray(val) && depth >= 1) || depth === -1 ? acc.push(...val.flat(depth--)) : acc.push(val),
 			[]
 		);
 	},
