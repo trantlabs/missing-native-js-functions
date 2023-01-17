@@ -17,7 +17,7 @@ declare global {
 		 *	rej("Promised rejected, but caught in console.error");
 		 *}).caught(); // will not throw the promise, but log the error in the console
 		 */
-		caught(): this;
+		caught?(): this;
 	}
 }
 
