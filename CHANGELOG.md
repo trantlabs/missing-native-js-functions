@@ -1,4 +1,24 @@
 
+## v1.4.0
+
+
+### 🚀 Enhancements
+
+  - **date:** AddYear, addMonth, addDate, addHours, addMinutes, addSeconds, addMilliseconds (3d96c71)
+
+### 🩹 Fixes
+
+  - **string:** Similarity (ffd75a8)
+  - **Promise:** Make caught optional to fix prisma.io client (0daf28c)
+
+### 🏡 Chore
+
+  - Changelog (3749fc6)
+
+### ❤️  Contributors
+
+- Samuel
+
 ## v1.3.0
 
 
