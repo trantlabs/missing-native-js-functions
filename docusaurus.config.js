@@ -8,10 +8,6 @@ const entryPoints = require("fs")
 	.readdirSync(__dirname + "/src")
 	.map((x) => __dirname + "/src/" + x);
 
-const organizationName = "trantlabs";
-const projectName = "missing-native-js-functions";
-const githubUrl = `https://github.com/${organizationName}/${projectName}`;
-
 /** @type {import('typedoc').TypeDocOptions} */
 const typedoc = {
 	tsconfig: __dirname + "/tsconfig.json",
@@ -24,11 +20,11 @@ const typedoc = {
 const config = {
 	title: "Missing Native JS Functions",
 	tagline: "A zero-dependecy JavaScript utility library delivering missing native functions 💼",
-	url: `https://${organizationName}.github.io/`,
+	url: `https://mnjsf.trantlabs.com/`,
 	organizationName,
 	projectName,
 	deploymentBranch: "gh-pages",
-	baseUrl: `/${projectName}/`,
+	baseUrl: `/`,
 	onBrokenLinks: "throw",
 	onBrokenMarkdownLinks: "warn",
 	organizationName: "trantlabs",
@@ -40,7 +36,6 @@ const config = {
 				docs: {
 					path: "./docs/",
 					routeBasePath: "/",
-					editUrl: `${githubUrl}/edit/master/website`,
 				},
 			},
 		],
