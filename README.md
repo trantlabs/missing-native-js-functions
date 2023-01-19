@@ -17,7 +17,7 @@ mnjsf delivers functions missing from JavaScript
 
 This library extends the properties of `Array`, `Object`, `Promise`, `Global`, `Math`, `Number` and `String`
 
-## [Documentation](https://trantlabs.github.io/missing-native-js-functions/)
+## [Documentation](http://mnjsf.trantlabs.com/)
 
 ## Installation
 
