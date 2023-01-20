@@ -21,7 +21,6 @@ const config = {
 	title: "Missing Native JS Functions",
 	tagline: "A zero-dependecy JavaScript utility library delivering missing native functions 💼",
 	url: `https://mnjsf.trantlabs.com/`,
-	projectName,
 	deploymentBranch: "gh-pages",
 	baseUrl: `/`,
 	onBrokenLinks: "throw",
