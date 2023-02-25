@@ -7,6 +7,7 @@ try {
 	}
 	if (!globalThis.setIntervalNow) {
 		globalThis.setIntervalNow = function (callback: Function, milliseconds?: number, ...args: any[]) {
+			if (typeof callback !== "function") return
 			const func = callback.bind(this, ...args);
 			func();
 			return setInterval(func, milliseconds);

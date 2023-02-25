@@ -11,7 +11,7 @@ define(Array.prototype, {
 	},
 
 	insert: function <T>(elem: T, index: number) {
-		if (!index) index = this.length;
+		if (index == null) index = this.length;
 		this.splice(index, 0, elem);
 		return this;
 	},
@@ -33,7 +33,7 @@ define(Array.prototype, {
 	},
 
 	unique: function <T>(predicate?: (value: T, index: number, obj: T[]) => any) {
-		if (predicate) {
+		if (typeof predicate === "function") {
 			return [
 				...new Map(
 					this.map((item: T, index: number, obj: T[]) => [predicate(item, index, obj), item])
@@ -55,7 +55,8 @@ define(Array.prototype, {
 		return this;
 	},
 
-	findMap: function <T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): number {
+	findMap: function <T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): any {
+		if (typeof predicate !== "function") return
 		for (let i = 0; i < this.length; i++) {
 			const result = predicate(this[i], i, this);
 			if (result) {
@@ -65,6 +66,7 @@ define(Array.prototype, {
 	},
 
 	findLast: function <T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): T | undefined {
+		if (typeof predicate !== "function") return
 		for (let i = this.length; i >= 0; i--) {
 			if (predicate(this[i], i, this)) return this[i];
 		}
@@ -72,6 +74,7 @@ define(Array.prototype, {
 	},
 
 	findLastIndex: function <T>(predicate: (value: T, index: number, obj: T[]) => any | undefined): number {
+		if (typeof predicate !== "function") return -1
 		for (let i = this.length - 1; i >= 0; i--) {
 			if (predicate(this[i], i, this)) return i;
 		}

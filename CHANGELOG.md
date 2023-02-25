@@ -1,4 +1,24 @@
 
+## v1.5.0
+
+
+### 🚀 Enhancements
+
+  - **Date:** Add() and set() function (c641a90)
+
+### 🩹 Fixes
+
+  - **Promise:** Make caught optional to fix prisma.io client (0daf28c)
+  - Deployment (634e3fb)
+
+### 🤖 CI
+
+  - Deploy docs under http://mnjsf.trantlabs.com/ (6169e40)
+
+### ❤️  Contributors
+
+- Samuel
+
 ## v1.4.0
 
 

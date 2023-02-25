@@ -2,10 +2,12 @@ import { define } from "./Util";
 
 define(Object.prototype, {
 	forEach: function (callback: (element: any, index?: string) => any) {
+		if (typeof callback !== "function") return
 		// @ts-ignore
 		return Object.keys(this).forEach((key) => callback(this[key], key));
 	},
 	map: function (callback: (element: any, index?: string) => any) {
+		if (typeof callback !== "function") return this
 		const obj = {};
 
 		Object.keys(this).forEach((key) => {
