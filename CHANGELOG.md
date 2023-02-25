@@ -1,10 +1,10 @@
-
-## v1.5.0
+## v1.4.2
 
 
 ### 🚀 Enhancements
 
   - **Date:** Add() and set() function (c641a90)
+  - Error handling for missing callbacks (7b828e3)
 
 ### 🩹 Fixes
 
