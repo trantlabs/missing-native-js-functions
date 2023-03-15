@@ -51,7 +51,7 @@ define(Array.prototype, {
 		return Math.floor(Math.random() * this.length);
 	},
 
-	insertRandom: function <T>(elem: T) {
+	insertRandom: function <T>(elem: T): void {
 		this.insert(elem, this.randomIndex());
 	},
 
@@ -215,7 +215,7 @@ declare global {
 		 * let a = [1,2,3,4,5];
 		 * a.insertRandom(27) // a = [1,2,3,27,4,5]
 		 */
-		insertRandom(elem: T): this;
+		insertRandom(elem: T): void;
 		/**
 		 * Returns the unique items of the array
 		 * @param {} predicate / condition
@@ -282,7 +282,7 @@ declare global {
 		 * let a = [1,2,3,4,5];
 		 * a.randomIndex() // 2 -> 3
 		 */
-		randomIndex(): this;
+		randomIndex(): number;
 	}
 }
 
