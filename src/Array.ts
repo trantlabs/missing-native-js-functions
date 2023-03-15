@@ -47,8 +47,12 @@ define(Array.prototype, {
 		return this[Math.floor(Math.random() * this.length)];
 	},
 
+	randomIndex: function (): number {
+		return Math.floor(Math.random() * this.length);
+	},
+
 	insertRandom: function <T>(elem: T) {
-		this.insert(elem, Math.floor(Math.random() * this.length));
+		this.insert(elem, this.randomIndex());
 	},
 
 	shuffle: function () {
@@ -83,10 +87,6 @@ define(Array.prototype, {
 			if (predicate(this[i], i, this)) return i;
 		}
 		return -1;
-	},
-
-	randomIndex: function (): number {
-		return Math.floor(Math.random() * this.length);
 	},
 
 	count: function (search: RegExp | any) {
