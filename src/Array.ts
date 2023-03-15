@@ -47,7 +47,7 @@ define(Array.prototype, {
 		return this[Math.floor(Math.random() * this.length)];
 	},
 
-	pushRandom: function <T>(elem: T) {
+	insertRandom: function <T>(elem: T) {
 		this.insert(elem, Math.floor(Math.random() * this.length));
 	},
 
@@ -83,6 +83,10 @@ define(Array.prototype, {
 			if (predicate(this[i], i, this)) return i;
 		}
 		return -1;
+	},
+
+	randomIndex: function (): number {
+		return Math.floor(Math.random() * this.length);
 	},
 
 	count: function (search: RegExp | any) {
@@ -205,13 +209,13 @@ declare global {
 		 */
 		random(): T | undefined;
 		/**
-		 * Pushes the element to a random position in the array, modifies original array
+		 * Inserts the element to a random position in the array, modifies original array
 		 * @returns {T[]} array with inserted element
 	     * @example
 		 * let a = [1,2,3,4,5];
-		 * a.pushRandom(27) // a = [1,2,3,27,4,5]
+		 * a.insertRandom(27) // a = [1,2,3,27,4,5]
 		 */
-		pushRandom(elem: T): this;
+		insertRandom(elem: T): this;
 		/**
 		 * Returns the unique items of the array
 		 * @param {} predicate / condition
@@ -271,6 +275,14 @@ declare global {
 		 * a.missing(b); // [1,2]
 		 */
 		missing(arr: T[]): T[];
+		/**
+		 * Returns a random Index of array
+		 * @returns {number} Random Index
+	     * @example
+		 * let a = [1,2,3,4,5];
+		 * a.randomIndex() // 2 -> 3
+		 */
+		randomIndex(): this;
 	}
 }
 
