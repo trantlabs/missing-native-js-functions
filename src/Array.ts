@@ -47,6 +47,14 @@ define(Array.prototype, {
 		return this[Math.floor(Math.random() * this.length)];
 	},
 
+	randomIndex: function (): number {
+		return Math.floor(Math.random() * this.length);
+	},
+
+	insertRandom: function <T>(elem: T): void {
+		this.insert(elem, this.randomIndex());
+	},
+
 	shuffle: function () {
 		for (let i = this.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
@@ -201,6 +209,14 @@ declare global {
 		 */
 		random(): T | undefined;
 		/**
+		 * Inserts the element to a random position in the array, modifies original array
+		 * @returns {T[]} array with inserted element
+	     * @example
+		 * let a = [1,2,3,4,5];
+		 * a.insertRandom(27) // a = [1,2,3,27,4,5]
+		 */
+		insertRandom(elem: T): void;
+		/**
 		 * Returns the unique items of the array
 		 * @param {} predicate / condition
 		 * @returns {T[]}
@@ -259,6 +275,14 @@ declare global {
 		 * a.missing(b); // [1,2]
 		 */
 		missing(arr: T[]): T[];
+		/**
+		 * Returns a random Index of array
+		 * @returns {number} Random Index
+	     * @example
+		 * let a = [1,2,3,4,5];
+		 * a.randomIndex() // 2 -> 3
+		 */
+		randomIndex(): number;
 	}
 }
 
