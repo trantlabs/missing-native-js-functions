@@ -1,3 +1,7 @@
+## v2.0.0...v2.0.0
+
+remove Object from package
+
 ## v1.5.0
 
 
