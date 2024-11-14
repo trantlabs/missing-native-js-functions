@@ -1,3 +1,0 @@
-{
-    "extends": ["@trantlabs/eslint-config-typescript"]
-}

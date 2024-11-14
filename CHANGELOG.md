@@ -1,3 +1,22 @@
+## v1.5.0
+
+
+### 🚀 Enhancements
+
+  - **array):** Push random function (e27876e)
+  - **array:** InsertRandom & randomIndex (2967618)
+  - **array:** Use randomIndex within randomIndex (a1cebb8)
+
+### 🩹 Fixes
+
+  - Exclude docs from npm package (cc70df9)
+  - **array:** Returning types (bd6e01d)
+
+### ❤️  Contributors
+
+- Conner Bachmann <bac@christmann.info>
+- Samuel
+
 ## v1.4.2
 
 
